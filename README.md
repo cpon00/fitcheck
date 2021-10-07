@@ -1,2 +1,0 @@
-# fitcheck
-Senior Project Repository
