@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Searchbar } from "react-native-paper";
 import { View, StyleSheet, Text } from "react-native";
-import { SearchWindow } from "../components/SearchWindow";
-import { SafeAreaView } from "react-native";
+import  {SearchWindow } from "../components/SearchWindow";
+import {SearchWindowLong} from "../components/SearchWindowLong";
+
 const Search = () => {
   const [searchQuery, setSearchQuery] = React.useState("");
 
@@ -27,7 +28,13 @@ const Search = () => {
       <SearchWindow img={require("../resources/techie.png")} name="Tech Wear" />
     </View>,
     <Text style={styles.descriptionText}>Trending</Text>,
-    
+    <View style={styles.card}>
+      <SearchWindowLong img={require("../resources/y2k.jpg")} name="Y2K"/>
+      <SearchWindow img={require("../resources/alt.jpg")} name="Altnerative" />
+      {/* <SearchWindow img={require("../resources/skater.jpg")} name="Skater" /> */}
+      
+  </View>,
+
   ]
 
   );
@@ -51,6 +58,8 @@ const styles = StyleSheet.create({
   card: {
     top: 55,
     flexDirection: "row",
+    flexWrap: 'wrap',
+    margin:5
   },
   searchTextStyle: {
     fontSize: 25,

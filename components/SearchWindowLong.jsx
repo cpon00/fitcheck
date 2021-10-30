@@ -1,7 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Text, ImageBackground } from "react-native";
 
-function SearchWindow({ name, img }) {
+function SearchWindowLong({ name, img }) {
   return [
     <ImageBackground
       style={styles.image}
@@ -19,7 +19,7 @@ function SearchWindow({ name, img }) {
 const styles = StyleSheet.create({
   image: {
     width: 160,
-    height: 90,
+    height: 300,
     marginTop: -40,
     marginLeft: 18,
     marginRight:15,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   imgText: {
     fontSize: 15,
-    fontWeight: "350",
+    fontWeight: "200",
     letterSpacing: 0.5,
     color: "#fff",
     position: "absolute",
@@ -56,4 +56,4 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
 });
-export { SearchWindow };
+export { SearchWindowLong };
