@@ -1,20 +1,23 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import styles from "./styles";
+import { Video } from "expo-av";
 
 const Post = () => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
-        <View>
-          <Image
+        <TouchableOpacity> 
+          <Video
+            source={{ uri: 'http://www.exit109.com/~dnn/clips/RW20seconds_1.mp4' }}
             style={styles.postVideo}
-            source={require("../../assets/photos/testPhoto.jpg")}
-          ></Image>
-        </View>
-      </TouchableOpacity>
+            resizeMode='contain'
+            isLooping
+            shouldPlay
+          />
+        </TouchableOpacity> 
+
+
 
       <View style={styles.uiContainer}>
         <View style={styles.rightContainer}>
