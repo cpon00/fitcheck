@@ -19,10 +19,10 @@ function SearchWindowLong({ name, img }) {
 const styles = StyleSheet.create({
   image: {
     width: 160,
-    height: 300,
-    marginTop: -40,
-    marginLeft: 18,
-    marginRight:15,
+    height:300,
+    // marginLeft: 18,
+    marginRight:20,
+    marginBottom:20,
     borderRadius: 16,
     backgroundColor: 'transparent',
     shadowColor: '#000',

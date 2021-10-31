@@ -24,20 +24,20 @@ const Search = () => {
     </View>,
     <Text style={styles.descriptionText}>Your Top Styles</Text>,
     <View style={styles.card}>
-      <SearchWindow img={require("../resources/minimal.jpg")} name="Minimalist"/>
-      <SearchWindow img={require("../resources/techie.png")} name="Tech Wear" />
+    <SearchWindow img={require("../resources/minimal.jpg")} name="Minimalist"/>
+       <SearchWindow img={require("../resources/techie.png")} name="Tech Wear" />
     </View>,
-    <Text style={styles.descriptionText}>Trending</Text>,
-    <View style={styles.card}>
-      <SearchWindowLong img={require("../resources/y2k.jpg")} name="Y2K"/>
+          <Text style={{marginLeft:20,fontWeight:'bold'}}>Trending</Text>,
+    <View style = {{flexDirection:"row"}}>
+    <View style={styles.Left}>
       <SearchWindow img={require("../resources/alt.jpg")} name="Altnerative" />
-      {/* <SearchWindow img={require("../resources/skater.jpg")} name="Skater" /> */}
-      
-  </View>,
-
-  ]
-
-  );
+      <SearchWindow img={require("../resources/skater.jpg")} name="Skater" />
+  </View>
+  <View style = {styles.Right}>
+      <SearchWindowLong img={require("../resources/y2k.jpg")} name="Y2K"/>
+  </View>
+  </View>
+  ]);
 };
 
 const styles = StyleSheet.create({
@@ -52,23 +52,31 @@ const styles = StyleSheet.create({
   searchText: {
     left: 30,
     top:50,
-    marginBottom:20,
     position:'absolute'
   },
   card: {
-    top: 55,
     flexDirection: "row",
-    flexWrap: 'wrap',
-    margin:5
+    left:20
   },
   searchTextStyle: {
     fontSize: 25,
   },
-  descriptionText: {
-    marginLeft: 20,
-    fontWeight: "bold",
-    marginTop: 80,
-    position:'relative'
+  descriptionText:{
+    marginTop:85,
+    marginLeft:20,
+    fontWeight:'bold',
+    marginBottom:20,
   },
+  Left:{
+    width:'40%',
+    top:20,
+    left:20,
+  },
+  Right:{
+    width:'40%',
+    position:'absolute',
+    top:20,
+    right:25,
+  }
 });
 export { Search };
