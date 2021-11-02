@@ -4,8 +4,6 @@ import { View, StyleSheet, Text, ImageBackground } from "react-native";
 function SearchWindow({ name, img}) {
   return [
     <ImageBackground
-      // style={[styles.image, {height:{height}}]}
-      // style = {{height:{height}}}
       style={styles.image}
       source={img}
       imageStyle={{ borderRadius: 5 }}
@@ -22,7 +20,7 @@ const styles = StyleSheet.create({
   image: {
     width: 160,
     height:90,
-    marginRight:20,
+    marginRight:30,
     marginBottom:20,
     borderRadius: 16,
     backgroundColor: 'transparent',

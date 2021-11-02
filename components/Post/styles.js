@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     height: Dimensions.get("window").height,
     width: "100%",
     position: "absolute",
+    top: -80,
   },
   uiContainer: {
     height: "100%",

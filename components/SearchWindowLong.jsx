@@ -13,14 +13,13 @@ function SearchWindowLong({ name, img }) {
       >
         <Text style={styles.imgText}>{name}</Text>
       </View>
-    </ImageBackground>,
+    </ImageBackground>
   ];
 }
 const styles = StyleSheet.create({
   image: {
     width: 160,
-    height:300,
-    // marginLeft: 18,
+    height:310,
     marginRight:20,
     marginBottom:20,
     borderRadius: 16,
