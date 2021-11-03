@@ -15,7 +15,7 @@ function Notifications() {
         options={{
           tabBarLabel: "Notifications",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={24} />
+            <MaterialCommunityIcons name="bell" color={color} size={"1.5em"} />
           ),
         }}
       />
@@ -25,7 +25,7 @@ function Notifications() {
         options={{
           tabBarLabel: "Messages",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="chat" color={color} size={24} />
+            <MaterialCommunityIcons name="chat" color={color} size={"1.5em"} />
           ),
         }}
       />
