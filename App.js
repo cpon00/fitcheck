@@ -1,14 +1,13 @@
 import * as React from "react";
-import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import { Home } from "./pages/Home.jsx";
+import { Home } from "./pages/Home/Home.jsx";
 import { Search } from "./pages/Search.jsx";
 import { Upload } from "./pages/Upload.jsx";
-import { Notifications } from "./pages/Notifications.jsx";
+import { Notifications } from "./pages/Notifications/Notifications.jsx";
 import { Profile } from "./pages/Profile.jsx";
 
 const Tab = createBottomTabNavigator();
@@ -23,6 +22,7 @@ export default function App() {
             component={Home}
             options={{
               tabBarLabel: "Home",
+              headerShown: false,
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons name="home" color={color} size={size} />
               ),
