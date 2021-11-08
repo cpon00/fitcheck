@@ -4,7 +4,7 @@ import Post from "../../components/Post";
 
 const post1 = {
   id: "p1",
-  videoUri: { uri: "http://www.exit109.com/~dnn/clips/RW20seconds_1.mp4" },
+  //videoUri: { uri: "http://www.exit109.com/~dnn/clips/RW20seconds_1.mp4" },
   user: {
     id: "u1",
     username: "jkalili",
