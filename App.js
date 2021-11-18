@@ -8,7 +8,7 @@ import { Home } from "./pages/Home/Home.jsx";
 import { Search } from "./pages/Search.jsx";
 import { Upload } from "./pages/Upload.jsx";
 import { Notifications } from "./pages/Notifications/Notifications.jsx";
-import { Profile } from "./pages/Profile.jsx";
+import { Profile } from "./pages/Profile/Profile.jsx";
 
 const Tab = createBottomTabNavigator();
 
