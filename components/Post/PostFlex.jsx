@@ -5,7 +5,7 @@ import styles from "./styles";
 import { Video } from "expo-av";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-const Post = (props) => {
+const PostFlex = (props) => {
   const [post, setPost] = useState(props.post);
   const [isLiked, setIsLiked] = useState(false);
   const [paused, setPaused] = useState(true);
@@ -68,4 +68,4 @@ const Post = (props) => {
   );
 };
 
-export default Post;
+export default PostFlex;
