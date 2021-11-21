@@ -5,7 +5,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { Home } from "./pages/Home/Home.jsx";
-import { Search } from "./pages/Search.jsx";
+import Search  from "./pages/Search/Search";
 import { Upload } from "./pages/Upload.jsx";
 import { Notifications } from "./pages/Notifications/Notifications.jsx";
 import { Profile } from "./pages/Profile.jsx";

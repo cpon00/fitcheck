@@ -1,8 +1,13 @@
 import React from "react";
 import { View, StyleSheet, Text, ImageBackground } from "react-native";
+import {useNavigation} from '@react-navigation/native'
+import { TouchableOpacity } from "react-native";
 
 function SearchWindow({ name, img}) {
-  return [
+  const navigation = useNavigation()
+  return (
+    <TouchableOpacity onPress={() => navigation.push('Categories',{title:{name}, image:{img} })}> 
+    {/* push works for naving through multiple categories pages, but maybe not for passing props */}
     <ImageBackground
       style={styles.image}
       source={img}
@@ -13,8 +18,9 @@ function SearchWindow({ name, img}) {
       >
         <Text style={styles.imgText}>{name}</Text>
       </View>
-    </ImageBackground>,
-  ];
+    </ImageBackground>
+    </TouchableOpacity>
+  )
 }
 const styles = StyleSheet.create({
   image: {
@@ -54,4 +60,4 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
 });
-export { SearchWindow };
+export default SearchWindow;

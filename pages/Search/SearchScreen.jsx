@@ -1,23 +1,18 @@
 import * as React from "react";
 import { Searchbar } from "react-native-paper";
-import { View, StyleSheet, Text, SafeAreaView,StatusBar } from "react-native";
-import  {SearchWindow } from "../../components/SearchWindow";
-import {SearchWindowLong} from "../../components/SearchWindowLong";
+import { View, Text, SafeAreaView,StatusBar } from "react-native";
+import  SearchWindow  from "../../components/SearchComponents/SearchWindow";
+import SearchWindowLong from "../../components/SearchComponents/SearchWindowLong";
 import { ScrollView } from "react-native-gesture-handler";
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import styles from './SearchStyles'
 
-const Search = () => {
+const SearchScreen = () => {
   const [searchQuery, setSearchQuery] = React.useState("");
-
-  const Stack = createNativeStackNavigator();
   const onChangeSearch = (query) => setSearchQuery(query);
-  const item = 0 // I dont know why i need this but I do
   return (
-
-     <SafeAreaView style = {{flex:1}} key = {item}>
+     <SafeAreaView style = {{flex:1}} >
        <StatusBar barStyle="dark-content" />
-       <ScrollView>
+       <ScrollView contentContainerStyle={{ paddingBottom: 40 }}>
        <Searchbar
         placeholder="Trends, Tags, or users"
         onChangeText={onChangeSearch}
@@ -58,6 +53,7 @@ const Search = () => {
             img={require("../../resources/fallCore.jpg")}
             name="Fall core"
           />
+          
           <SearchWindowLong img={require("../../resources/grunge.jpg")} name="Grunge" />
         </View>
         <View style={styles.Right}>
@@ -77,41 +73,4 @@ const Search = () => {
    );
 };
 
-const styles = StyleSheet.create({
-  search: {
-    marginLeft: 25,
-    marginRight: 25,
-    borderRadius: 10,
-    height: 35,
-    marginTop:50,
-    marginBottom:40
-  },
-  searchText: {
-    left: 30,
-    position:'absolute'
-  },
-  card: {
-    flexDirection: "row",
-    left:20
-  },
-  searchTextStyle: {
-    fontSize: 25,
-  },
-  descriptionText:{
-    marginLeft:20,
-    fontWeight:'bold',
-    marginBottom:20,
-  },
-  Left:{
-    width:'40%',
-    top:20,
-    left:20,
-  },
-  Right:{
-    width:'40%',
-    position:'absolute',
-    top:20,
-    right:25,
-  }
-});
-export { Search };
+export default SearchScreen;
