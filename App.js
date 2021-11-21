@@ -26,9 +26,9 @@ import PostScreen from './components/main/Post'
 
 import { Home } from "./pages/Home/Home.jsx";
 import { Search } from "./pages/Search.jsx";
-import { Upload } from "./pages/Upload.jsx";
+import { Upload } from "./pages/Upload/Upload.jsx";
 import { Notifications } from "./pages/Notifications/Notifications.jsx";
-import { Profile } from "./pages/Profile.jsx";
+import { Profile } from "./pages/Profile/Profile.jsx";
 
 const store = createStore(rootReducer, applyMiddleware(thunk))
 const app = initializeApp(config.firebaseConfig)

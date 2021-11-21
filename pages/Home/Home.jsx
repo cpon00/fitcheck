@@ -9,12 +9,17 @@ const Tab = createMaterialTopTabNavigator();
 
 function Home() {
   return (
-    <SafeAreaProvider style={{ top: "4.5%" }}>
+    <SafeAreaProvider style={{ top: "5%" }}>
       <Tab.Navigator>
         <Tab.Screen
           name="Flex"
           component={Flex}
           options={{
+            tabBarIndicatorContainerStyle: { backgroundColor: "#f6f3ed" },
+            tabBarIndicatorStyle: {
+              backgroundColor: "#f6f3ed",
+              height: "100%",
+            },
             tabBarLabel: "Flex",
             tabBarShowLabel: false,
             tabBarIcon: ({ color }) => (
@@ -26,6 +31,11 @@ function Home() {
           name="Checks"
           component={Checks}
           options={{
+            tabBarIndicatorStyle: {
+              backgroundColor: "#f6f3ed",
+              height: "100%",
+            },
+            tabBarIndicatorContainerStyle: { backgroundColor: "#f6f3ed" },
             tabBarLabel: "Checks",
             tabBarShowLabel: false,
             tabBarIcon: ({ color }) => (
