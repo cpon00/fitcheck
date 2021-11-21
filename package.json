@@ -15,6 +15,7 @@
     "expo-splash-screen": "~0.13.4",
     "expo-status-bar": "~1.1.0",
     "expo-updates": "~0.10.5",
+    "firebase": "^9.3.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.2",
@@ -29,7 +30,10 @@
     "react-native-unimodules": "~0.15.0",
     "react-native-vector-icons": "^8.1.0",
     "react-native-web": "0.17.1",
-    "react-router-native": "^5.2.1"
+    "react-redux": "^7.2.6",
+    "react-router-native": "^5.2.1",
+    "redux": "^4.1.2",
+    "redux-thunk": "^2.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
