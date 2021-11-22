@@ -11,20 +11,19 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: -80,
   },
-  uiContainer: {
-    height: "100%",
-    justifyContent: "flex-end",
-    bottom: "18%",
-  },
   rightContainer: {
+    position: "absolute",
     alignSelf: "flex-end",
     justifyContent: "space-between",
     height: 300,
-    marginRight: 5,
+    right: 5,
+    bottom: "20%",
   },
   bottomContainer: {
-    justifyContent: "flex-end",
+    position: "absolute",
     padding: 15,
+    bottom: "18%",
+    width: Dimensions.get("window").width * 0.89,
   },
   handle: {
     fontSize: 16,
