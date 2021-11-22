@@ -12,7 +12,7 @@ function Home() {
     <SafeAreaProvider style={{ top: "4.5%" }}>
       <Tab.Navigator
         initialRouteName={"Critic"}
-        tabBarOptions={{
+        screenOptions={{
           style: {
             backgroundColor: "#f8f4f4",
             paddingBottom: 3,

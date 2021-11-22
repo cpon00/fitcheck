@@ -4,6 +4,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import styles from "./styles";
 import { Video } from "expo-av";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { Modal } from "react-native-modal";
 
 const PostChecks = (props) => {
   const [post, setPost] = useState(props.post);
