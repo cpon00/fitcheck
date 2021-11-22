@@ -8,7 +8,10 @@ import { bindActionCreators } from 'redux'
 import { fetchUser } from '../redux/actions/index'
 
 import HomeScreen from './home/Home';
-import ProfileScreen from './Profile';
+import SearchScreen from '../pages/Search'
+import NotificationsScreen from './Notifications/Notifications';
+import ProfileScreen from '../pages/Profile/Profile';
+
 
 const EmptyScreen = () => {
     return(null)
@@ -30,6 +33,12 @@ export class Main extends Component {
                         <MaterialCommunityIcons name = "home" color = {color} size = {26}/>
                     )
                 }}/>
+                <Tab.Screen name="Search" component={SearchScreen}
+                options={{
+                    tabBarIcon:({ color, size}) => (
+                        <MaterialCommunityIcons name="magnify" color={color} size={26} />
+                    )
+                }} />
                 <Tab.Screen name="PostContainer" component={EmptyScreen} 
                     listeners={({ navigation }) => ({
                         tabPress: event => {
@@ -42,6 +51,12 @@ export class Main extends Component {
                             <MaterialCommunityIcons name = "plus-circle" color = {color} size = {26}/>
                         )
                     }}/>
+                <Tab.Screen name="Notifications" component={NotificationsScreen}
+                options={{
+                    tabBarIcon:({color, size}) => (
+                        <MaterialCommunityIcons name="bell" color={color} size={26}/>
+                    )
+                }} />
                 <Tab.Screen name="Profile" component={ProfileScreen} 
                 options={{
                     tabBarIcon: ({ color, size}) => (
