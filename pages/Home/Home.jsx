@@ -10,7 +10,15 @@ const Tab = createMaterialTopTabNavigator();
 function Home() {
   return (
     <SafeAreaProvider style={{ top: "4.5%" }}>
-      <Tab.Navigator>
+      <Tab.Navigator
+        initialRouteName={"Critic"}
+        tabBarOptions={{
+          style: {
+            backgroundColor: "#f8f4f4",
+            paddingBottom: 3,
+          },
+        }}
+      >
         <Tab.Screen
           name="Flex"
           component={Flex}

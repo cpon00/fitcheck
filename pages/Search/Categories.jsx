@@ -15,7 +15,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 
 import styles from "./SearchStyles";
 
-const Categories = ({ title }) => {
+const Categories = ({ title,img }) => {
   const navigation = useNavigation();
 
   return (
