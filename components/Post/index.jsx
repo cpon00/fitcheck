@@ -77,7 +77,6 @@ const Post = (props) => {
       <TouchableWithoutFeedback>
         <Modal
           isVisible={isModalVisible}
-          useNativeDriverForBackdrops
           swipeDirection={["up", "down"]}
           onBackdropPress={toggleModal}
         >

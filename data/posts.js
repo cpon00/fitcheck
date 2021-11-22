@@ -21,8 +21,7 @@ export default [
       username: "carterpon",
       imageUri: require("../assets/photos/pawn.jpg"),
     },
-    description:
-      "Chris wendland is a stinky idiot who doesnt know shit from cum",
+    description: "Blah Blah description example woo!",
     likes: 10,
     comments: 1,
   },

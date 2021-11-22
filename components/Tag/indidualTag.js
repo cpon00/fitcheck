@@ -4,27 +4,22 @@ import { Image } from "react-native";
 import { StyleSheet, Linking } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
-function IndividualTag() {
+const IndividualTag = (props) => {
+  const { post } = props;
+
   return (
     <TouchableOpacity
       style={styles.container}
-      onPress={() =>
-        Linking.openURL("https://www.adidas.com/us/women-hoodies_sweatshirts")
-      }
+      onPress={() => Linking.openURL(`${post.tagUrl}`)}
     >
-      <Image
-        source={require("../../assets/photos/shirt.jpg")}
-        style={styles.image}
-      />
+      <Image source={post.tagImageUri} style={styles.image} />
       <View style={styles.textContainer}>
-        <Text style={styles.brandText}>adidas</Text>
-        <Text style={styles.clothingText}>
-          Adicolor Classics Trefoil Hoodie
-        </Text>
+        <Text style={styles.brandText}>{post.tagBrandText}</Text>
+        <Text style={styles.clothingText}>{post.tagClothingText}</Text>
       </View>
     </TouchableOpacity>
   );
-}
+};
 
 export default IndividualTag;
 
