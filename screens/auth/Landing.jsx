@@ -3,7 +3,7 @@ import { Button, Text, View, StyleSheet } from "react-native";
 
 export default function Landing({ navigation }) {
   return (
-    <View style={styles}>
+    <View style={styles.landing}>
       <Button
         title="Register"
         onPress={() => navigation.navigate("Register")}
@@ -14,6 +14,9 @@ export default function Landing({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  flex: 1,
-  justifyContent: "center",
+  landing: {
+    flex: 1,
+    justifyContent: "center",
+  }
+  
 });

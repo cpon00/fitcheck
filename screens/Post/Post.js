@@ -5,13 +5,10 @@ import * as ImagePicker from 'expo-image-picker'
 
 export default function App() {
   const [hasCameraPermission, setHasCameraPermission] = useState(null)
-
   const [hasGalleryPermission, setHasGalleryPermission] = useState(null)
-
   const [camera, setCamera] = useState(null)
   const [image, setImage] = useState(null)
-
-  const [type, setType] = useState(Camera.Constants.Type.back)
+  const [type, setType] = useState(Camera.Constants.Type.front)
 
   useEffect(() => {
     (async () => {
@@ -55,11 +52,13 @@ export default function App() {
         ref={ref => setCamera(ref)}
         style={styles.fixedRatio} 
         type={type} 
-        ratio={'1:1'}/>
+        ratio={'1:1'}
+        />
     </View>
 
     <Button
         title="Flip Image"
+        style={{ flex: 1 }}
         onPress={() => {
         setType(
             type === Camera.Constants.Type.back
@@ -68,8 +67,8 @@ export default function App() {
             );
         }}>
         </Button>
-        <Button title="Take Picture" onPress={() => takePicture()}/>
-        <Button title="Pick Image From Gallery" onPress={() => pickImage()} />
+        <Button title="Take Picture" style={{ flex: 1 }} onPress={() => takePicture()}/>
+        <Button title="Pick Image From Gallery" style={{ flex: 1 }} onPress={() => pickImage()} />
         {image && <Image source={{ uri: image }} style={{ flex: 1 }} />}
   </View>   
   );
