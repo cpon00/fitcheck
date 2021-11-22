@@ -26,7 +26,7 @@ export class Main extends Component {
     }
     render() {
         return(
-            <Tab.Navigator initialRouteName="Home" labeled ={false}>
+            <Tab.Navigator tabBarOptions={{showLabel: false}} initialRouteName="Home">
                 <Tab.Screen name="Home" component={HomeScreen} 
                 options={{
                     tabBarIcon: ({ color, size}) => (
@@ -41,7 +41,7 @@ export class Main extends Component {
                         ),
                         headerShown: false,
                 }} />
-                <Tab.Screen name="Post" component={EmptyScreen} 
+                <Tab.Screen name="PostContainer" component={EmptyScreen} 
                     listeners={({ navigation }) => ({
                         tabPress: event => {
                             event.preventDefault()
@@ -50,7 +50,7 @@ export class Main extends Component {
                     })}
                     options={{
                         tabBarIcon: ({ color, size}) => (
-                            <MaterialCommunityIcons name = "plus-circle" color = {color} size = {26}/>
+                            <MaterialCommunityIcons name = "diamond-stone" color = {color} size = {52}/>
                         ),
                         headerShown: false,
                     }}/>
@@ -72,11 +72,6 @@ export class Main extends Component {
         )
     }
 }
-
-const styles = StyleSheet.create({
-    flex: 1,
-    justifyContent: 'center',
-  });
 
 const mapStateToProps = (store) => ({
     currentUser: store.userState.currentUser

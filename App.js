@@ -56,6 +56,9 @@ export class App extends Component {
   }
   
   componentDidMount() {
+    this._isMounted = true
+
+
     auth.onAuthStateChanged((user) => {
       if (!user) {
         this.setState({
@@ -78,9 +81,9 @@ export class App extends Component {
     //this code handles what happens before the application loads.
     if (!loaded) {
       return (
-        <View style={styles}>
+        <View style={styles.preLoad}>
           <Text>Loading...</Text>
-        </View>
+        </View> 
       )
     }
 
@@ -112,8 +115,12 @@ export class App extends Component {
 }
 
 const styles = StyleSheet.create({
-  flex: 1,
-  justifyContent: "center",
+  preLoad: {
+    flex: 1,
+    justifyContent: "center",
+  }
+
+  
 });
 
 export default App;
