@@ -29,7 +29,7 @@ function Profile() {
         <Text style = {styles.username}> @mymy123 </Text>
         <View style ={{flexDirection: "row"}}>
           <View style = {styles.left}>
-            <Text style = {styles.followersTextNumber}>3</Text>
+            <Text style = {styles.followersTextNumber}>69</Text>
             <Text style = {styles.followersText}>Following</Text>
           </View>
 
@@ -156,4 +156,4 @@ const styles = StyleSheet.create({
 
 })
 
-export {Profile};
+export default Profile;

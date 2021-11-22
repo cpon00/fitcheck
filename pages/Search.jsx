@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Searchbar } from "react-native-paper";
 import { View, StyleSheet, Text, SafeAreaView,StatusBar } from "react-native";
-import  {SearchWindow } from "../components/SearchWindow";
-import {SearchWindowLong} from "../components/SearchWindowLong";
+import  {SearchWindow } from "../components/Search/SearchWindow";
+import {SearchWindowLong} from "../components/Search/SearchWindowLong";
 import { ScrollView } from "react-native-gesture-handler";
 
 const Search = () => {
@@ -28,11 +28,11 @@ const Search = () => {
        <Text style={styles.descriptionText}>Your Top Styles</Text>
        <View style={styles.card}>
         <SearchWindow
-          img={require("../resources/minimal.jpg")}
+          img={require("../assets/resources/y2k.jpg")}
           name="Minimalist"
         />
         <SearchWindow
-          img={require("../resources/techie.png")}
+          img={require("../assets/resources/techie.png")}
           name="Tech Wear"
         />
       </View> 
@@ -40,31 +40,31 @@ const Search = () => {
        <View style={{ flexDirection: "row" }}>
         <View style={styles.Left}>
           <SearchWindow
-            img={require("../resources/alt.jpg")}
-            name="Altnerative"
+            img={require("../assets/resources/alt.jpg")}
+            name="Alternative"
           />
           <SearchWindow
-            img={require("../resources/skater.jpg")}
+            img={require("../assets/resources/skater.jpg")}
             name="Skater"
           />
           <SearchWindow
-            img={require("../resources/athleisure.jpeg")}
+            img={require("../assets/resources/athleisure.jpeg")}
             name="Athleisure"
           />
           <SearchWindow
-            img={require("../resources/fallCore.jpg")}
+            img={require("../assets/resources/fallCore.jpg")}
             name="Fall core"
           />
-          <SearchWindowLong img={require("../resources/grunge.jpg")} name="Grunge" />
+          <SearchWindowLong img={require("../assets/resources/grunge.jpg")} name="Grunge" />
         </View>
         <View style={styles.Right}>
-          <SearchWindowLong img={require("../resources/y2k.jpg")} name="Y2K" />
+          <SearchWindowLong img={require("../assets/resources/y2k.jpg")} name="Y2K" />
           <SearchWindow
-            img={require("../resources/skater.jpg")}
+            img={require("../assets/resources/skater.jpg")}
             name="Skater"
           />
           <SearchWindow
-            img={require("../resources/alt.jpg")}
+            img={require("../assets/resources/alt.jpg")}
             name="Altnerative"
           />
         </View>
@@ -111,4 +111,4 @@ const styles = StyleSheet.create({
     right:25,
   }
 });
-export { Search };
+export default Search;

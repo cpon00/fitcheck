@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from 'react-native'
 
-import config from './config.json'
-
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
 import { getFirestore } from '@firebase/firestore' 
@@ -18,20 +16,30 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import LandingScreen from "./components/auth/Landing";
-import RegisterScreen from "./components/auth/Register";
-import LoginScreen from "./components/auth/Login"
-import MainScreen from './components/Main'
-import PostScreen from './components/main/Post'
+import LandingScreen from "./screens/auth/Landing.jsx";
+import RegisterScreen from "./screens/auth/Register.jsx";
+import LoginScreen from "./screens/auth/Login.jsx"
+import MainScreen from './screens/Main.jsx'
+import PostScreen from './screens/Post/Post'
 
-import { Home } from "./pages/Home/Home.jsx";
-import { Search } from "./pages/Search.jsx";
+import { Home } from "./screens/home/Home";
+import { Search } from "./pages/Search";
 import { Upload } from "./pages/Upload/Upload.jsx";
-import { Notifications } from "./pages/Notifications/Notifications.jsx";
+import { Notifications } from "./screens/Notifications/Notifications.jsx";
 import { Profile } from "./pages/Profile/Profile.jsx";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyDa0oitU7ovHN2ARWdDf0c3OWm7ytk4wmA",
+  authDomain: "fitcheck-3de6c.firebaseapp.com",
+  projectId: "fitcheck-3de6c",
+  storageBucket: "fitcheck-3de6c.appspot.com",
+  messagingSenderId: "406176712188",
+  appId: "1:406176712188:web:cff2c250e1ab40fadb9e79",
+  measurementId: "G-7RHFFYST2R"
+};
+
 const store = createStore(rootReducer, applyMiddleware(thunk))
-const app = initializeApp(config.firebaseConfig)
+const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
 const auth = getAuth();
 
@@ -51,12 +59,18 @@ export class App extends Component {
     auth.onAuthStateChanged((user) => {
       if (!user) {
         this.setState({
+          loggedIn: false,
+          loaded: true,
+        });
+      } else {
+        this.setState({
           loggedIn: true,
           loaded: true,
-        })
+        });
       }
     })
   }
+  
 
   render() {
     const { loggedIn, loaded } = this.state

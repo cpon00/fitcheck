@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet } from "react-native"
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { connect } from 'react-redux'
@@ -18,7 +18,7 @@ const EmptyScreen = () => {
 }
 
 
-const Tab = createMaterialBottomTabNavigator()
+const Tab = createBottomTabNavigator()
 
 export class Main extends Component {
     componentDidMount() {
@@ -31,15 +31,17 @@ export class Main extends Component {
                 options={{
                     tabBarIcon: ({ color, size}) => (
                         <MaterialCommunityIcons name = "home" color = {color} size = {26}/>
-                    )
+                    ),
+                    headerShown: false,
                 }}/>
                 <Tab.Screen name="Search" component={SearchScreen}
-                options={{
-                    tabBarIcon:({ color, size}) => (
-                        <MaterialCommunityIcons name="magnify" color={color} size={26} />
-                    )
+                    options={{
+                        tabBarIcon:({ color, size}) => (
+                            <MaterialCommunityIcons name="magnify" color={color} size={26} />
+                        ),
+                        headerShown: false,
                 }} />
-                <Tab.Screen name="PostContainer" component={EmptyScreen} 
+                <Tab.Screen name="Post" component={EmptyScreen} 
                     listeners={({ navigation }) => ({
                         tabPress: event => {
                             event.preventDefault()
@@ -49,19 +51,22 @@ export class Main extends Component {
                     options={{
                         tabBarIcon: ({ color, size}) => (
                             <MaterialCommunityIcons name = "plus-circle" color = {color} size = {26}/>
-                        )
+                        ),
+                        headerShown: false,
                     }}/>
                 <Tab.Screen name="Notifications" component={NotificationsScreen}
-                options={{
-                    tabBarIcon:({color, size}) => (
-                        <MaterialCommunityIcons name="bell" color={color} size={26}/>
-                    )
+                    options={{
+                        tabBarIcon:({color, size}) => (
+                            <MaterialCommunityIcons name="bell" color={color} size={26}/>
+                        ),
+                        headerShown: false,
                 }} />
                 <Tab.Screen name="Profile" component={ProfileScreen} 
-                options={{
-                    tabBarIcon: ({ color, size}) => (
-                        <MaterialCommunityIcons name = "account-circle" color = {color} size = {26}/>
-                    )
+                    options={{
+                        tabBarIcon: ({ color, size}) => (
+                            <MaterialCommunityIcons name = "account-circle" color = {color} size = {26}/>
+                        ),
+                        headerShown: false,
                 }}/>
             </Tab.Navigator>
         )

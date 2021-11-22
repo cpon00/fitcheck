@@ -1,8 +1,8 @@
 import * as React from "react";
 import { View, StyleSheet, } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { ProfileWindow } from "../../components/ProfileWindow";
-import { ProfileWindowLong} from "../../components/ProfileWindowLong";
+import { ProfileWindow } from "../../components/Profile/ProfileWindow";
+import { ProfileWindowLong} from "../../components/Profile/ProfileWindowLong";
 
 const FlexView = () => {
   return (
@@ -11,29 +11,29 @@ const FlexView = () => {
         <View style={{flexDirection: "row"}}>
             <View style={styles.Left}>
                 <ProfileWindow
-                    img={require("../../resources/neon.png")}
+                    img={require("../../assets/resources/neon.png")}
                 />
                 <ProfileWindowLong
-                    img={require("../../resources/winter.jpg")}
+                    img={require("../../assets/resources/winter.jpg")}
                     name=""
                 />
                 <ProfileWindow
-                    img={require("../../resources/manson.png")}
+                    img={require("../../assets/resources/manson.png")}
                 />
                 <ProfileWindow
-                    img={require("../../resources/festival.png")}
+                    img={require("../../assets/resources/festival.png")}
                 />
             </View>
             <View style={styles.Right}>
                 <ProfileWindowLong
-                    img={require("../../resources/cyber.png")}
+                    img={require("../../assets/resources/cyber.png")}
                     name=""
                 />
                 <ProfileWindow
-                    img={require("../../resources/punk.png")}
+                    img={require("../../assets/resources/punk.png")}
                 />
                 <ProfileWindowLong
-                    img={require("../../resources/streetStyle.png")}
+                    img={require("../../assets/resources/streetStyle.png")}
                 />            
             </View>
         
