@@ -23,7 +23,7 @@ import MainScreen from './screens/Main.jsx'
 import PostScreen from './screens/Post/Post'
 
 import { Home } from "./screens/home/Home";
-import { Search } from "./pages/Search";
+import  Search from "./pages/Search";
 import { Upload } from "./pages/Upload/Upload.jsx";
 import { Notifications } from "./screens/Notifications/Notifications.jsx";
 import { Profile } from "./pages/Profile/Profile.jsx";

@@ -25,6 +25,7 @@
     "react-native": "0.64.3",
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "~1.10.2",
+    "react-native-modal": "^13.0.0",
     "react-native-pager-view": "5.4.6",
     "react-native-paper": "^4.9.2",
     "react-native-reanimated": "~2.2.0",

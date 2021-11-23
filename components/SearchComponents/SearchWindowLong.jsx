@@ -1,8 +1,13 @@
 import React from "react";
 import { View, StyleSheet, Text, ImageBackground } from "react-native";
+import { TouchableOpacity } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 function SearchWindowLong({ name, img }) {
-  return [
+
+  const navigation = useNavigation()
+  return (
+    <TouchableOpacity onPress={() => navigation.push('Categories', {title:name,image:img})}>
     <ImageBackground
       style={styles.image}
       source={img}
@@ -14,8 +19,10 @@ function SearchWindowLong({ name, img }) {
         <Text style={styles.imgText}>{name}</Text>
       </View>
     </ImageBackground>
-  ];
+    </TouchableOpacity>  
+  );
 }
+
 const styles = StyleSheet.create({
   image: {
     width: 160,
@@ -55,4 +62,4 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
 });
-export { SearchWindowLong };
+export default SearchWindowLong ;

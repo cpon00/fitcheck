@@ -1,0 +1,74 @@
+{
+    "Minimalist": {
+        "r1title":"Tech Wear",
+        "r1image":21,
+        "r2title":"Athleisure",
+        "r2image":24
+    },
+    "Tech Wear":{
+        "r1title":"Minimalist",
+        "r1image":20,
+        "r2title":"Chinese Streetwear",
+        "r2image":30
+    },
+    "Alternative":{
+        "r1title":"Y2K",
+        "r1image":27,
+        "r2title":"Tech Wear",
+        "r2image":21
+    },
+    "Fall Core":{
+        "r1title":"Earthtones",
+        "r1image":22,
+        "r2title":"Academia",
+        "r2image":29
+    },
+    "Y2K":{
+        "r1title":"Grunge",
+        "r1image":26,
+        "r2title":"Skater",
+        "r2image":23
+    },
+    "Grunge":{
+        "r1title":"Earthtones",
+        "r1image":22,
+        "r2title":"Skater",
+        "r2image":23
+    },
+    "Skater":{
+        "r1title":"Y2K",
+        "r1image":27,
+        "r2title":"Grunge",
+        "r2image":26
+    },
+    "Athleisure":{
+        "r1title":"Minimalist",
+        "r1image":20,
+        "r2title":"Skater",
+        "r2image":23
+    },
+    "Earthtones":{
+        "r1title":"Academia",
+        "r1image":29,
+        "r2title":"Grunge",
+        "r2image":26
+    },
+    "Hypebeast":{
+        "r1title":"Tech Wear",
+        "r1image":21,
+        "r2title":"Chinese Streetwear",
+        "r2image":30
+    },
+    "Academia":{
+        "r1title":"Earthtones",
+        "r1image":22,
+        "r2title":"Fall Core",
+        "r2image":25
+    },
+    "Chinese Streetwear":{
+        "r1title":"Hypebeast",
+        "r1image":28,
+        "r2title":"Tech Wear",
+        "r2image":21
+    }
+}
