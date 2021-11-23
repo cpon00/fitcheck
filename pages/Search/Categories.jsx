@@ -12,17 +12,18 @@ import  CategoriesScroll from "../../components/SearchComponents/CategoriesScrol
 import SearchWindow  from "../../components/SearchComponents/SearchWindow";
 import { useNavigation } from "@react-navigation/native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-
 import styles from "./SearchStyles";
 
-const Categories = ({ title,img }) => {
+const Categories = (props) => {
   const navigation = useNavigation();
-
+  const related = require('./SearchWindowRelated.json')
+  const title = props?.route?.params?.title
+  const image = props?.route?.params?.image
   return (
     <SafeAreaView>
       <StatusBar barStyle="dark-content" />
       <TouchableOpacity
-        style={{ width: "20%" }}
+        style={{ width: "30%"}}
         onPress={() => navigation.goBack()}
       >
         <View style={styles.categoriesText}>
@@ -32,25 +33,14 @@ const Categories = ({ title,img }) => {
             size={30}
             style={{ width: 30 }}
           />
-          <Text style={styles.categoriesTextStyle}>title</Text>
+          <Text style={styles.categoriesTextStyle}>{title}</Text>
         </View>
       </TouchableOpacity>
-      <ScrollView contentContainerStyle={{ paddingBottom: 90 }}>
-        <TouchableOpacity onPress={() => alert(JSON.stringify(title))}>
+      <ScrollView style = {{height:670}}> 
           <CategoriesWindow
-            img={require("../../resources/alt.jpg")}
-            name="alt"
+            img={image}
+            name={title}
           />
-        </TouchableOpacity>
-        {/* <ImageBackground
-        style={styles.image}
-        source={image}
-        imageStyle={{ borderRadius: 5 }}
-      >
-        <View style={styles.imgTextStyle}>
-          <Text style={styles.imgText}>{title}</Text>
-        </View>
-      </ImageBackground> */}
         <CategoriesScroll />
         <CategoriesScroll />
         <CategoriesScroll />
@@ -59,12 +49,12 @@ const Categories = ({ title,img }) => {
         </View>
         <View style={styles.card}>
           <SearchWindow
-            img={require("../../resources/minimal.jpg")}
-            name="Minimalist"
+            img={JSON.stringify(related[title].r1image)}
+            name={related[title].r1title}
           />
           <SearchWindow
-            img={require("../../resources/techie.png")}
-            name="Tech Wear"
+            img={JSON.stringify(related[title].r2image)}
+            name={related[title].r2title}
           />
         </View>
       </ScrollView>

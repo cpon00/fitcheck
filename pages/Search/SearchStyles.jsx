@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   categoriesText: {
     left: 30,
     marginBottom: 15,
-    width: "100%",
+    width: "260%",
     marginTop: 5,
   },
   categoriesTextStyle: {
@@ -76,6 +76,13 @@ const styles = StyleSheet.create({
   },
   imgText: {
     fontSize: 15,
+    fontWeight: "300",
+    letterSpacing: 0.5,
+    color: "#fff",
+    position: "absolute",
+  },
+  categoriesImgText: {
+    fontSize: 20,
     fontWeight: "300",
     letterSpacing: 0.5,
     color: "#fff",

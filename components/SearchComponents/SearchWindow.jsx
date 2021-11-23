@@ -5,10 +5,8 @@ import { TouchableOpacity } from "react-native";
 
 function SearchWindow({ name, img}) {
   const navigation = useNavigation()
-  const test = "test"
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Categories',{title:{test}, image:{img} })}> 
-    {/* push works for naving through multiple categories pages, but maybe not for passing props */}
+    <TouchableOpacity onPress={() => navigation.push('Categories',{title:name, image:img })}> 
     <ImageBackground
       style={styles.image}
       source={img}

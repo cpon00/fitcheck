@@ -7,7 +7,7 @@ function SearchWindowLong({ name, img }) {
 
   const navigation = useNavigation()
   return (
-    <TouchableOpacity onPress={() => navigation.navigate('Categories', {title:name})}>
+    <TouchableOpacity onPress={() => navigation.push('Categories', {title:name,image:img})}>
     <ImageBackground
       style={styles.image}
       source={img}

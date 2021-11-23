@@ -10,7 +10,7 @@ function CategoriesWindow({ name, img }) {
         imageStyle={{ borderRadius: 5 }}
       >
         <View style={styles.imgTextStyle}>
-          <Text style={styles.imgText}>{name}</Text>
+          <Text style={styles.categoriesImgText}>{name}</Text>
         </View>
       </ImageBackground>
     </View>

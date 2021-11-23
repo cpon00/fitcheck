@@ -38,9 +38,10 @@ const SearchScreen = () => {
        <View style={{ flexDirection: "row" }}>
         <View style={styles.Left}>
           <SearchWindow
-            img={require("../../resources/alt.jpg")}
-            name="Altnerative"
+            img={require("../../resources/earthtones.jpg")}
+            name="Earthtones"
           />
+
           <SearchWindow
             img={require("../../resources/skater.jpg")}
             name="Skater"
@@ -51,20 +52,27 @@ const SearchScreen = () => {
           />
           <SearchWindow
             img={require("../../resources/fallCore.jpg")}
-            name="Fall core"
+            name="Fall Core"
           />
-          
           <SearchWindowLong img={require("../../resources/grunge.jpg")} name="Grunge" />
         </View>
         <View style={styles.Right}>
           <SearchWindowLong img={require("../../resources/y2k.jpg")} name="Y2K" navigation />
           <SearchWindow
-            img={require("../../resources/skater.jpg")}
-            name="Skater"
+            img={require("../../resources/hypebeast.jpg")}
+            name="Hypebeast"
+          />
+           <SearchWindow
+            img={require("../../resources/academia.jpg")}
+            name="Academia"
+          />
+           <SearchWindow
+            img={require("../../resources/ChineseStreetwear.jpg")}
+            name="Chinese Streetwear"
           />
           <SearchWindow
             img={require("../../resources/alt.jpg")}
-            name="Altnerative"
+            name="Alternative"
           />
         </View>
       </View> 
