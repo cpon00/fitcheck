@@ -9,7 +9,6 @@ const Tab = createMaterialTopTabNavigator();
 
 function Home() {
   return (
-<<<<<<< HEAD:pages/Home/Home.jsx
     <SafeAreaProvider style={{ top: "4.5%" }}>
       <Tab.Navigator
         initialRouteName={"Critic"}
@@ -20,10 +19,6 @@ function Home() {
           },
         }}
       >
-=======
-    <SafeAreaProvider style={{ top: "5%" }}>
-      <Tab.Navigator>
->>>>>>> main:screens/home/Home.jsx
         <Tab.Screen
           name="Flex"
           component={Flex}

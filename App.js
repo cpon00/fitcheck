@@ -22,11 +22,11 @@ import LoginScreen from "./screens/auth/Login.jsx"
 import MainScreen from './screens/Main.jsx'
 import PostScreen from './screens/Post/Post'
 
-import { Home } from "./screens/home/Home";
-import  Search from "./pages/Search";
+import  Home  from "./screens/home/Home";
+import Search  from "./pages/Search/Search";
 import { Upload } from "./pages/Upload/Upload.jsx";
-import { Notifications } from "./screens/Notifications/Notifications.jsx";
-import { Profile } from "./pages/Profile/Profile.jsx";
+import  Notifications  from "./screens/Notifications/Notifications.jsx";
+import  Profile  from "./pages/Profile/Profile.jsx";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDa0oitU7ovHN2ARWdDf0c3OWm7ytk4wmA",
@@ -200,3 +200,4 @@ export { db, app };
 //     </SafeAreaProvider>
 //   );
 // }
+
