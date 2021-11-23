@@ -21,7 +21,7 @@ export default [
       username: "carterpon",
       imageUri: require("../assets/photos/pawn.jpg"),
     },
-    description: "Blah Blah description example woo!",
+    description: "hey im stinky",
     likes: 10,
     comments: 1,
   },

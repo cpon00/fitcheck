@@ -1,7 +1,7 @@
 import React from "react";
-import NotificationsView from "./NotificationsView";
+import NotificationsView from "../../components/Notifications/NotificationsView";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import MessagesView from "./MessagesView";
+import MessagesView from "../../components/Notifications/MessagesView";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
 const Tab = createMaterialTopTabNavigator();
@@ -33,4 +33,4 @@ function Notifications() {
   );
 }
 
-export { Notifications };
+export default Notifications;

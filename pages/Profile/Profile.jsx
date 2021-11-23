@@ -7,6 +7,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { useState } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 
 
@@ -29,7 +30,7 @@ function Profile() {
         <Text style = {styles.username}> @mymy123 </Text>
         <View style ={{flexDirection: "row"}}>
           <View style = {styles.left}>
-            <Text style = {styles.followersTextNumber}>3</Text>
+            <Text style = {styles.followersTextNumber}>69</Text>
             <Text style = {styles.followersText}>Following</Text>
           </View>
 
@@ -156,4 +157,4 @@ const styles = StyleSheet.create({
 
 })
 
-export {Profile};
+export default Profile;
