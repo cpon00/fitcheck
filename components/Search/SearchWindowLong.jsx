@@ -55,4 +55,4 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
 });
-export { SearchWindowLong };
+export default { SearchWindowLong };
