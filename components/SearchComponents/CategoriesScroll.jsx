@@ -6,7 +6,7 @@ import {
   Image,
   ScrollView,
 } from "react-native";
-import styles from '../../pages/Search/SearchStyles'
+import styles from '../../screens/Search/SearchStyles'
 import { useNavigation } from "@react-navigation/native"; //will use to navigate to specific post
 
 function CategoriesScroll() {
