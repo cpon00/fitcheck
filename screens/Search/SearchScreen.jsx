@@ -26,11 +26,11 @@ const SearchScreen = () => {
        <Text style={styles.descriptionText}>Your Top Styles</Text>
        <View style={styles.card}>
         <SearchWindow
-          img={require("../../assets/resources/minimal.jpg")}
+          img={require("../../assets/minimal.jpg")}
           name="Minimalist"
         />
         <SearchWindow
-          img={require("../../assets/resources/techie.png")}
+          img={require("../../assets/techie.png")}
           name="Tech Wear"
         />
       </View> 
@@ -38,40 +38,40 @@ const SearchScreen = () => {
        <View style={{ flexDirection: "row" }}>
         <View style={styles.Left}>
           <SearchWindow
-            img={require("../../assets/resources/earthtones.jpg")}
+            img={require("../../assets/earthtones.jpg")}
             name="Earthtones"
           />
 
           <SearchWindow
-            img={require("../../assets/resources/skater.jpg")}
+            img={require("../../assets/skater.jpg")}
             name="Skater"
           />
           <SearchWindow
-            img={require("../../assets/resources/athleisure.jpeg")}
+            img={require("../../assets/athleisure.jpeg")}
             name="Athleisure"
           />
           <SearchWindow
-            img={require("../../assets/resources/fallCore.jpg")}
+            img={require("../../assets/fallCore.jpg")}
             name="Fall Core"
           />
-          <SearchWindowLong img={require("../../assets/resources/grunge.jpg")} name="Grunge" />
+          <SearchWindowLong img={require("../../assets/grunge.jpg")} name="Grunge" />
         </View>
         <View style={styles.Right}>
-          <SearchWindowLong img={require("../../assets/resources/y2k.jpg")} name="Y2K" navigation />
+          <SearchWindowLong img={require("../../assets/y2k.jpg")} name="Y2K" navigation />
           <SearchWindow
-            img={require("../../assets/resources/hypebeast.jpg")}
+            img={require("../../assets/hypebeast.jpg")}
             name="Hypebeast"
           />
            <SearchWindow
-            img={require("../../assets/resources/academia.jpg")}
+            img={require("../../assets/academia.jpg")}
             name="Academia"
           />
            <SearchWindow
-            img={require("../../assets/resources/ChineseStreetwear.jpg")}
+            img={require("../../assets/ChineseStreetwear.jpg")}
             name="Chinese Streetwear"
           />
           <SearchWindow
-            img={require("../../assets/resources/alt.jpg")}
+            img={require("../../assets/alt.jpg")}
             name="Alternative"
           />
         </View>

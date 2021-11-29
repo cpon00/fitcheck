@@ -18,31 +18,31 @@ function CategoriesScroll() {
         <View style={styles.gallery}>
           <Image
             style={styles.imageGallery}
-            source={require("../../assets/resources/alt.jpg")}
+            source={require("../../assets/alt.jpg")}
           />
           <Image
             style={styles.imageGallery}
-            source={require("../../assets/resources/alt.jpg")}
+            source={require("../../assets/alt.jpg")}
           />
           <Image
             style={styles.imageGallery}
-            source={require("../../assets/resources/alt.jpg")}
+            source={require("../../assets/alt.jpg")}
           />
           <Image
             style={styles.imageGallery}
-            source={require("../../assets/resources/alt.jpg")}
+            source={require("../../assets/alt.jpg")}
           />
           <Image
             style={styles.imageGallery}
-            source={require("../../assets/resources/alt.jpg")}
+            source={require("../../assets/alt.jpg")}
           />
           <Image
             style={styles.imageGallery}
-            source={require("../../assets/resources/alt.jpg")}
+            source={require("../../assets/alt.jpg")}
           />
           <Image
             style={styles.imageGallery}
-            source={require("../../assets/resources/alt.jpg")}
+            source={require("../../assets/alt.jpg")}
           />
         </View>
       </ScrollView>

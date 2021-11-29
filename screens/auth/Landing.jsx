@@ -3,7 +3,7 @@ import { Pressable, Text, View, StyleSheet,ImageBackground } from "react-native"
 
 export default function Landing({ navigation }) {
   return (
-    <ImageBackground source = {require("../../assets/resources/fitcheck.jpg")} style = {{flex:1}}>
+    <ImageBackground source = {require("../../assets/fitcheck.jpg")} style = {{flex:1}}>
     <View style={styles.landing}>
     <View style = {styles.buttonContainer}>
       <Pressable
