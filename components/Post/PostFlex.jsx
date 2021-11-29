@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  Image,
-  TouchableWithoutFeedback,
-} from "react-native";
+import { View, Text, Image, TouchableWithoutFeedback } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import styles from "./styles";
 import { Video } from "expo-av";
@@ -63,10 +58,15 @@ const PostFlex = (props) => {
           <Text style={styles.statsLabel}>{post.likes}</Text>
         </TouchableOpacity>
 
-        <View style={styles.iconContainer}>
+        <TouchableOpacity
+          style={styles.iconContainer}
+          onPress={() =>
+            alert("Comments are currently under construction! Check back soon.")
+          }
+        >
           <MaterialCommunityIcons name={"message"} size={40} color={"white"} />
           <Text style={styles.statsLabel}>{post.comments}</Text>
-        </View>
+        </TouchableOpacity>
 
         <TouchableOpacity style={styles.iconContainer} onPress={toggleModal}>
           <MaterialCommunityIcons name={"tag"} size={40} color={"white"} />
