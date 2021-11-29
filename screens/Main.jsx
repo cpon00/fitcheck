@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux'
 import { fetchUser } from '../redux/actions/index'
 
 import HomeScreen from './home/Home';
-import SearchScreen from '../pages/Search'
+import Search from '../pages/Search/Search'
 import NotificationsScreen from './Notifications/Notifications';
 import ProfileScreen from '../pages/Profile/Profile';
 
@@ -34,7 +34,7 @@ export class Main extends Component {
                     ),
                     headerShown: false,
                 }}/>
-                <Tab.Screen name="Search" component={SearchScreen}
+                <Tab.Screen name="Search" component={Search}
                     options={{
                         tabBarIcon:({ color, size}) => (
                             <MaterialCommunityIcons name="magnify" color={color} size={26} />

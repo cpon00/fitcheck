@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Searchbar } from "react-native-paper";
 import { View, Text, SafeAreaView,StatusBar } from "react-native";
-import  SearchWindow  from "../../components/Search/SearchWindow";
-import SearchWindowLong from "../../components/Search/SearchWindowLong";
+import  SearchWindow  from "../../components/SearchComponents/SearchWindow";
+ import SearchWindowLong from "../../components/SearchComponents/SearchWindowLong";
 import { ScrollView } from "react-native-gesture-handler";
 import styles from './SearchStyles'
 

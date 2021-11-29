@@ -47,157 +47,157 @@ const Stack = createStackNavigator()
 
 const Tab = createBottomTabNavigator();
 
-export class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      loaded: false,
-    }
-  }
+// export class App extends Component {
+//   constructor(props) {
+//     super(props)
+//     this.state = {
+//       loaded: false,
+//     }
+//   }
   
-  componentDidMount() {
-    this._isMounted = true
+//   componentDidMount() {
+//     this._isMounted = true
 
 
-    auth.onAuthStateChanged((user) => {
-      if (!user) {
-        this.setState({
-          loggedIn: false,
-          loaded: true,
-        });
-      } else {
-        this.setState({
-          loggedIn: true,
-          loaded: true,
-        });
-      }
-    })
-  }
+//     auth.onAuthStateChanged((user) => {
+//       if (!user) {
+//         this.setState({
+//           loggedIn: false,
+//           loaded: true,
+//         });
+//       } else {
+//         this.setState({
+//           loggedIn: true,
+//           loaded: true,
+//         });
+//       }
+//     })
+//   }
   
 
-  render() {
-    const { loggedIn, loaded } = this.state
+//   render() {
+//     const { loggedIn, loaded } = this.state
 
-    //this code handles what happens before the application loads.
-    if (!loaded) {
-      return (
-        <View style={styles.preLoad}>
-          <Text>Loading...</Text>
-        </View> 
-      )
-    }
+//     //this code handles what happens before the application loads.
+//     if (!loaded) {
+//       return (
+//         <View style={styles.preLoad}>
+//           <Text>Loading...</Text>
+//         </View> 
+//       )
+//     }
 
-    //this code handles what happens when there is no user credentials stored
-    if (!loggedIn) {
-      return (
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName='Landing'>
-            <Stack.Screen name='Landing' component={LandingScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
-            <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-          </Stack.Navigator>
-        </NavigationContainer>
-      )
-    }
+//     //this code handles what happens when there is no user credentials stored
+//     if (!loggedIn) {
+//       return (
+//         <NavigationContainer>
+//           <Stack.Navigator initialRouteName='Landing'>
+//             <Stack.Screen name='Landing' component={LandingScreen} options={{ headerShown: false }} />
+//             <Stack.Screen name="Register" component={RegisterScreen} options={{ headerShown: false }}/>
+//             <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
+//           </Stack.Navigator>
+//         </NavigationContainer>
+//       )
+//     }
 
-    //this code handles when user is logged in and app is loaded.
-    return (
-      <Provider store ={store}>
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName="Main">
-            <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
-            <Stack.Screen name="Post" component={PostScreen}/>
-          </Stack.Navigator>
-        </NavigationContainer>
-      </Provider>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  preLoad: {
-    flex: 1,
-    justifyContent: "center",
-  }
-
-  
-});
-
-export default App;
-export { db, app };
-
-// export default function App() {
-//   return (
-//     <SafeAreaProvider>
-//       <NavigationContainer>
-//         <Tab.Navigator>
-//           <Tab.Screen
-//             name="Home"
-//             component={Home}
-//             options={{
-//               tabBarLabel: "Home",
-//               headerShown: false,
-//               tabBarIcon: ({ color, size }) => (
-//                 <MaterialCommunityIcons name="home" color={color} size={size} />
-//               ),
-//             }}
-//           />
-//           <Tab.Screen
-//             name="Search"
-//             component={Search}
-//             options={{
-//               tabBarLabel: "Search",
-//               headerShown: false,
-//               tabBarIcon: ({ color, size }) => (
-//                 <MaterialCommunityIcons
-//                   name="magnify"
-//                   color={color}
-//                   size={size}
-//                 />
-//               ),
-//             }}
-//           />
-//           <Tab.Screen
-//             name="Upload"
-//             component={Upload}
-//             options={{
-//               tabBarLabel: "Upload",
-//               tabBarIcon: ({ color, size }) => (
-//                 <MaterialCommunityIcons
-//                   name="diamond-stone"
-//                   color={color}
-//                   size={35}
-//                 />
-//               ),
-//             }}
-//           />
-//           <Tab.Screen
-//             name="Notifications"
-//             component={Notifications}
-//             options={{
-//               tabBarLabel: "Notifications",
-//               tabBarIcon: ({ color, size }) => (
-//                 <MaterialCommunityIcons name="bell" color={color} size={size} />
-//               ),
-//             }}
-//           />
-//           <Tab.Screen
-//             name="Profile"
-//             component={Profile}
-//             options={{
-//               tabBarLabel: "Profile",
-//               tabBarIcon: ({ color, size }) => (
-//                 <MaterialCommunityIcons
-//                   name="account"
-//                   color={color}
-//                   size={size}
-//                 />
-//               ),
-//             }}
-//           />
-//         </Tab.Navigator>
-//       </NavigationContainer>
-//     </SafeAreaProvider>
-//   );
+//     //this code handles when user is logged in and app is loaded.
+//     return (
+//       <Provider store ={store}>
+//         <NavigationContainer>
+//           <Stack.Navigator initialRouteName="Main">
+//             <Stack.Screen name="Main" component={MainScreen} options={{ headerShown: false }} />
+//             <Stack.Screen name="Post" component={PostScreen}/>
+//           </Stack.Navigator>
+//         </NavigationContainer>
+//       </Provider>
+//     );
+//   }
 // }
+
+// const styles = StyleSheet.create({
+//   preLoad: {
+//     flex: 1,
+//     justifyContent: "center",
+//   }
+
+  
+// });
+
+// export default App;
+// export { db, app };
+
+export default function App() {
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              tabBarLabel: "Home",
+              headerShown: false,
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="home" color={color} size={size} />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Search"
+            component={Search}
+            options={{
+              tabBarLabel: "Search",
+              headerShown: false,
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons
+                  name="magnify"
+                  color={color}
+                  size={size}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Upload"
+            component={Upload}
+            options={{
+              tabBarLabel: "Upload",
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons
+                  name="diamond-stone"
+                  color={color}
+                  size={35}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Notifications"
+            component={Notifications}
+            options={{
+              tabBarLabel: "Notifications",
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="bell" color={color} size={size} />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Profile"
+            component={Profile}
+            options={{
+              tabBarLabel: "Profile",
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons
+                  name="account"
+                  color={color}
+                  size={size}
+                />
+              ),
+            }}
+          />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
+}
 
