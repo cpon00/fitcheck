@@ -14,9 +14,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import LandingScreen from "./screens/auth/Landing.jsx";
-import RegisterScreen from "./screens/auth/Register.jsx";
-import LoginScreen from "./screens/auth/Login.jsx";
+import LandingScreen from "./screens/Auth/Landing.jsx";
+import RegisterScreen from "./screens/Auth/Register.jsx";
+import LoginScreen from "./screens/Auth/Login.jsx";
 import MainScreen from "./screens/Main.jsx";
 import PostScreen from "./screens/Post/Post";
 

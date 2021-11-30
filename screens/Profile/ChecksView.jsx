@@ -1,8 +1,16 @@
 import React from "react";
 import { ScrollView } from "react-native-gesture-handler";
 import { List } from "react-native-paper";
+import uuid from "react-native-uuid";
 
-const users = ["@sophiacopallaismymom", "@aphextwink", "@sneakerhead69", "@microchips", "@amayak47", "@k1sophie"];
+const users = [
+  "@sophiacopallaismymom",
+  "@aphextwink",
+  "@sneakerhead69",
+  "@microchips",
+  "@amayak47",
+  "@k1sophie",
+];
 const comments = [
   "these with platforms would be hot!",
   "anna wintour could never",
@@ -13,24 +21,21 @@ const comments = [
 ];
 
 const ChecksItems = users.map((user, i) => {
-    return (
-        <List.Item
-            title={user}
-            description={comments[i]}
-            left={(props) => <List.Icon {...props} icon="account-circle-outline"/>}
-        />
-    
-    );
+  return (
+    <List.Item
+      title={user}
+      description={comments[i]}
+      key={uuid.v4()}
+      left={(props) => <List.Icon {...props} icon="account-circle-outline" />}
+    />
+  );
 });
 
 function ChecksView() {
-    return (
-        <ScrollView>
-        <List.Section>
-           {ChecksItems}
-        </List.Section>
-        </ScrollView>
-
-    )
+  return (
+    <ScrollView>
+      <List.Section>{ChecksItems}</List.Section>
+    </ScrollView>
+  );
 }
 export default ChecksView;

@@ -9,7 +9,7 @@ Our app, Fitcheck, will allow users to share their pictures of their outfits. Si
 | Role                 | Team Member                                    |
 | -------------------- | ---------------------------------------------- |
 | Project Manager      | [Carter Pon](https://github.com/cpon00)        |
-| Front End            | [Halle Vogelpohl]()                            |
+| Front End            | [Halle Vogelpohl](https://github.com/hallegv)  |
 | Front End            | [Amaya Alviz](https://github.com/aalviz)       |
 | Back End             | [Josh Seaman](https://github.com/jseaman1)     |
 | Back End / Front End | [Adrian Leung](https://github.com/AdrianLearn) |
