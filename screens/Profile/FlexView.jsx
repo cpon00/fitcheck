@@ -11,29 +11,29 @@ const FlexView = () => {
         <View style={{flexDirection: "row"}}>
             <View style={styles.Left}>
                 <ProfileWindow
-                    img={require("../../assets/resources/neon.png")}
+                    img={require("../../assets/neon.png")}
                 />
                 <ProfileWindowLong
-                    img={require("../../assets/resources/winter.jpg")}
+                    img={require("../../assets/winter.jpg")}
                     name=""
                 />
                 <ProfileWindow
-                    img={require("../../assets/resources/manson.png")}
+                    img={require("../../assets/manson.png")}
                 />
                 <ProfileWindow
-                    img={require("../../assets/resources/festival.png")}
+                    img={require("../../assets/festival.png")}
                 />
             </View>
             <View style={styles.Right}>
                 <ProfileWindowLong
-                    img={require("../../assets/resources/cyber.png")}
+                    img={require("../../assets/cyber.png")}
                     name=""
                 />
                 <ProfileWindow
-                    img={require("../../assets/resources/punk.png")}
+                    img={require("../../assets/punk.png")}
                 />
                 <ProfileWindowLong
-                    img={require("../../assets/resources/streetStyle.png")}
+                    img={require("../../assets/streetStyle.png")}
                 />            
             </View>
         

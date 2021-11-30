@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from "react-native"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
@@ -7,10 +6,10 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux' 
 import { fetchUser } from '../redux/actions/index'
 
-import HomeScreen from './home/Home';
-import Search from '../pages/Search/Search'
+import HomeScreen from './Home/HomeScreen';
+import Search from './Search/Search'
 import NotificationsScreen from './Notifications/Notifications';
-import ProfileScreen from '../pages/Profile/Profile';
+import ProfileScreen from './Profile/Profile';
 
 
 const EmptyScreen = () => {
@@ -26,7 +25,15 @@ export class Main extends Component {
     }
     render() {
         return(
-            <Tab.Navigator tabBarOptions={{showLabel: false}} initialRouteName="Home">
+            <Tab.Navigator screenOptions={{
+                "tabBarShowLabel": false,
+                "tabBarStyle": [
+                  {
+                    "display": "flex"
+                  },
+                  null
+                ]
+              }} initialRouteName="Home">
                 <Tab.Screen name="Home" component={HomeScreen} 
                 options={{
                     tabBarIcon: ({ color, size}) => (

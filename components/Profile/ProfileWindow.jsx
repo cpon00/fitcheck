@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text, ImageBackground } from "react-native";
+import { StyleSheet, ImageBackground } from "react-native";
 
 function ProfileWindow({ name, img}) {
   return [

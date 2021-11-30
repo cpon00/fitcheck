@@ -1,11 +1,11 @@
 export default [
   {
     id: "p1",
-    videoUri: require("../assets/photos/testvid3.mp4"),
+    videoUri: require("../assets/testvid3.mp4"),
     user: {
       id: "u1",
       username: "jkalili",
-      imageUri: require("../assets/photos/profile.jpg"),
+      imageUri: require("../assets/profile.jpg"),
     },
     description: "my first post",
     likes: 437,
@@ -13,11 +13,11 @@ export default [
   },
   {
     id: "p2",
-    videoUri: require("../assets/photos/testvid4.mp4"),
+    videoUri: require("../assets/testvid4.mp4"),
     user: {
       id: "u2",
       username: "carterpon",
-      imageUri: require("../assets/photos/pawn.jpg"),
+      imageUri: require("../assets/pawn.jpg"),
     },
     description:
       "gimme some feedback idiots. This is just a test to see where the rest of the description goes...",

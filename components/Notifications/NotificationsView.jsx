@@ -1,5 +1,6 @@
 import React from "react";
 import { List } from "react-native-paper";
+import uuid from "react-native-uuid";
 
 const users = ["@halle", "@carter", "@amaya", "@jason", "@adrian", "@josh"];
 const comments = [
@@ -16,6 +17,7 @@ const notifsItems = users.map((user, i) => {
     <List.Item
       title={user}
       description={comments[i]}
+      key={uuid.v4()}
       left={(props) => <List.Icon {...props} icon="account-circle-outline" />}
     />
   );
