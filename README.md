@@ -1,14 +1,27 @@
 # fitcheck
 
+
 ## Overview
 
 Our app, Fitcheck, will allow users to share their pictures of their outfits. Similar to VSCO and TikTok, users can either upload pictures and videos to a public feed and show off their outfit of the day, or ask for suggestions to improve their fashion. Our app will provide filters with the ability to sort by different styles of fashion, such as “minimalist”, “cottage-core”, or “vintage”. Not only will our app allow users to express themselves in how they dress, it will allow collaboration through constructive efforts to improve one’s fashion. Our app is for anyone interested in fashion, or for anyone looking to get into fashion.
 
+
+## Running our Application:
+Clone repository from GitHub - cpon00/fitcheck
+
+1. Run ```npm install``` in the terminal at the Fitcheck directory 
+
+2. Run ```expo start``` from the same directory location 
+
+3. On the locally hosted web browser, choose your preferred method to view the project 
+
+    - It is recommended that you download the expo application on your smartphone in order to have the best viewing and testing experience. (features may be limited from the web app)
+    
 ## Team
 
 | Role                 | Team Member                                    |
 | -------------------- | ---------------------------------------------- |
-| Project Manager      | [Carter Pon](https://github.com/cpon00)        |
+| Product Manager      | [Carter Pon](https://github.com/cpon00)        |
 | Front End            | [Halle Vogelpohl](https://github.com/hallegv)  |
 | Front End            | [Amaya Alviz](https://github.com/aalviz)       |
 | Back End             | [Josh Seaman](https://github.com/jseaman1)     |
@@ -47,3 +60,4 @@ By the end of the semester, we intend on delivering a full MVP with the most imp
 - [Agile Board Link](https://fitcheck.atlassian.net/jira/software/projects/FIT/boards/1)
 - [Miro ERD Link](https://miro.com/app/board/o9J_lugLl74=/?invite_link_id=285782000329)
 - [Figma Wireframes](https://www.figma.com/file/7lhawy5REpccuqESR87Owr/Frame?node-id=194%3A1561)
+- [Trello](https://trello.com/b/SjSzIbVw/fitcheck-scrum-board)

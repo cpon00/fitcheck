@@ -11,10 +11,10 @@ export class Login extends Component {
       password: "",
     };
 
-    this.onSignUp = this.onSignUp.bind(this);
+    this.onSignIn = this.onSignIn.bind(this);
   }
 
-  onSignUp() {
+  onSignIn() {
     const { email, password } = this.state;
     const auth = getAuth();
     signInWithEmailAndPassword(auth, email, password)
@@ -40,7 +40,7 @@ export class Login extends Component {
           style = {styles.input}
           onChangeText={(password) => this.setState({ password })}
         />
-        <Button onPress={() => this.onSignUp()} title="Sign In" />
+        <Button onPress={() => this.onSignIn()} title="Sign In" />
       </View>
     );
   }

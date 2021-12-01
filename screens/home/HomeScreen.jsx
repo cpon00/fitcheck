@@ -7,7 +7,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const Tab = createMaterialTopTabNavigator();
 
-function Home() {
+function HomeScreen() {
   return (
     <SafeAreaProvider style={{ top: "4.5%" }}>
       <Tab.Navigator
@@ -60,4 +60,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomeScreen;

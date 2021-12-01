@@ -7,8 +7,8 @@ import { ProfileWindowLong} from "../../components/Profile/ProfileWindowLong";
 const FlexView = () => {
   return (
       
-    <ScrollView>
-        <View style={{flexDirection: "row"}}>
+    <ScrollView contentContainerStyle={{ paddingBottom: 60 }}>
+    <View style={{flexDirection: "row"}}>
             <View style={styles.Left}>
                 <ProfileWindow
                     img={require("../../assets/neon.png")}

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { View, Button, TextInput,StyleSheet } from "react-native";
-
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "@firebase/firestore";
-import { db } from "../../App";
+
+import { db } from "../../config";
 
 export class Register extends Component {
   constructor(props) {

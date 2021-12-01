@@ -20,25 +20,10 @@ import LoginScreen from "./screens/Auth/Login.jsx";
 import MainScreen from "./screens/Main.jsx";
 import PostScreen from "./screens/Post/Post";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDa0oitU7ovHN2ARWdDf0c3OWm7ytk4wmA",
-  authDomain: "fitcheck-3de6c.firebaseapp.com",
-  projectId: "fitcheck-3de6c",
-  storageBucket: "fitcheck-3de6c.appspot.com",
-  messagingSenderId: "406176712188",
-  appId: "1:406176712188:web:cff2c250e1ab40fadb9e79",
-  measurementId: "G-7RHFFYST2R",
-};
-
 const store = createStore(rootReducer, applyMiddleware(thunk));
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 const auth = getAuth();
 
 const Stack = createStackNavigator();
-
-const Tab = createBottomTabNavigator();
-
 export class App extends Component {
   constructor(props) {
     super(props);
@@ -128,4 +113,3 @@ const styles = StyleSheet.create({
 });
 
 export default App;
-export { db, app };

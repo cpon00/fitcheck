@@ -18,7 +18,7 @@ function Profile() {
   return (
     //<View style={{ flex: 1, alignItems: 'center' }}></View>
 
-    <SafeAreaProvider key={uuid.v4()}>
+    <SafeAreaProvider key={uuid.v4()} style = {{top:'6%'}}>
       <View style={{ top: "0.2%", alignItems: "center" }}>
         <Avatar
           rounded
@@ -68,7 +68,6 @@ function Profile() {
             ),
           }}
         />
-
         <Tab.Screen
           name="Checks"
           component={ChecksView}
