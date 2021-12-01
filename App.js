@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "@firebase/firestore";
 
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
@@ -12,7 +10,6 @@ import thunk from "redux-thunk";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import LandingScreen from "./screens/Auth/Landing.jsx";
 import RegisterScreen from "./screens/Auth/Register.jsx";
