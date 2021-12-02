@@ -1,3 +1,4 @@
+{/*Delete this file*/}
 import React from "react";
 import FlexView from "./FlexView.jsx"
 import ChecksView from "./ChecksView.jsx"
