@@ -11,7 +11,7 @@ const product1 = {
 };
 const product2 = {
   tagImageUri: require("../../assets/pants.png"),
-  tagBrandText: "Priness Polly",
+  tagBrandText: "Princess Polly",
   tagClothingText: "Kirstyn Pants",
   tagUrl:
     "https://us.princesspolly.com/products/kirstyn-pants?variant=31240194818132",

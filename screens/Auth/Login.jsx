@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { View, Button, TextInput,StyleSheet } from "react-native";
+import { View, Text, TextInput,StyleSheet } from "react-native";
 
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export class Login extends Component {
   constructor(props) {
@@ -29,18 +30,22 @@ export class Login extends Component {
   render() {
     return (
       <View style = {styles.container}>
+        <Text style={styles.topText}>Email</Text>
         <TextInput
           placeholder="email"
           style = {styles.input}
           onChangeText={(email) => this.setState({ email })}
         />
+        <Text style={styles.topText}>Password</Text>
         <TextInput
           placeholder="password"
           secureTextEntry={true}
           style = {styles.input}
           onChangeText={(password) => this.setState({ password })}
         />
-        <Button onPress={() => this.onSignIn()} title="Sign In" />
+        <TouchableOpacity onPress={() => this.onSignIn()} style={styles.button}>
+          <Text style={styles.buttonText}>LOG IN</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -48,17 +53,47 @@ export class Login extends Component {
 
 const styles = StyleSheet.create({
   input:{
-    height: 40,
+    height: 35,
     margin: 12,
-    borderWidth: 1,
+    borderWidth: .5,
     padding: 10,
-    borderRadius:10,
+    borderColor:"gray"
   },
   container:{
-    top:'40%'
+    top:'35%',
+    width: '80%',
+    alignSelf:'center',
+    backgroundColor:'#FAF9F6',
+    paddingTop:20,
+    borderRadius:15,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: .2,
+    shadowRadius: 5,
+    elevation: 3,
   },
   button:{
-    
+    marginTop:12,
+    alignSelf:'center',
+    backgroundColor:'skyblue',
+    width: '100%',
+    height: 50,
+    justifyContent:'center',
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15
+  },
+  buttonText:{
+    alignSelf:"center",
+    color:'white',
+    fontWeight: "400"
+  },
+  topText:{
+    fontWeight: "300",
+    marginLeft: 10,
+    fontSize: 10
   }
 })
 export default Login;
