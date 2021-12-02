@@ -61,6 +61,8 @@ function Profile() {
           name="Flex"
           component={FlexView}
           options={{
+            tabBarIndicatorContainerStyle: { backgroundColor: "transparent" },
+
             tabBarLabel: "Flex",
             tabBarShowLabel: false,
             tabBarIcon: ({ color }) => (
@@ -72,6 +74,8 @@ function Profile() {
           name="Checks"
           component={ChecksView}
           options={{
+            tabBarIndicatorContainerStyle: { backgroundColor: "transparent" },
+
             tabBarLabel: "Checks",
             tabBarShowLabel: false,
             tabBarIcon: ({ color }) => (

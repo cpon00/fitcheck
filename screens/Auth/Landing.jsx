@@ -32,8 +32,10 @@ const styles = StyleSheet.create({
   buttonContainer:{
     justifyContent: 'center', 
     alignItems: 'center',
-    marginTop:'150%',
+    bottom:'15%',
     height:'10%',
+    position:'absolute',
+    width: '100%'
   },
   registerButton: {
     alignItems: "center",
