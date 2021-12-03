@@ -15,7 +15,8 @@ import LandingScreen from "./screens/Auth/Landing.jsx";
 import RegisterScreen from "./screens/Auth/Register.jsx";
 import LoginScreen from "./screens/Auth/Login.jsx";
 import MainScreen from "./screens/Main.jsx";
-import PostScreen from "./screens/Post/Post";
+import PostScreen from "./screens/Post/Post.jsx";
+import SaveScreen from "./screens/Post/Save.jsx"
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 const auth = getAuth();
@@ -94,7 +95,8 @@ export class App extends Component {
               component={MainScreen}
               options={{ headerShown: false }}
             />
-            <Stack.Screen name="Post" component={PostScreen} />
+            <Stack.Screen name="Post" component={PostScreen} navigation={this.props.navigation}/>
+            <Stack.Screen name="Save" component={SaveScreen}/>
           </Stack.Navigator>
         </NavigationContainer>
       </Provider>
