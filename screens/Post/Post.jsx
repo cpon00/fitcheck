@@ -3,7 +3,7 @@ import { Button, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-na
 import { Camera } from 'expo-camera'
 import * as ImagePicker from 'expo-image-picker'
 
-export default function App() {
+export default function Post({ navigation }) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null)
   const [hasGalleryPermission, setHasGalleryPermission] = useState(null)
   const [camera, setCamera] = useState(null)
@@ -69,6 +69,8 @@ export default function App() {
         </Button>
         <Button title="Take Picture" style={{ flex: 1 }} onPress={() => takePicture()}/>
         <Button title="Pick Image From Gallery" style={{ flex: 1 }} onPress={() => pickImage()} />
+        <Button title="Save" onPress={() => navigation.navigate('Save', {image})}/>
+
         {image && <Image source={{ uri: image }} style={{ flex: 1 }} />}
   </View>   
   );
