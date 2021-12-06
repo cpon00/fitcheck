@@ -36,7 +36,6 @@ function Profile() {
             <Text style = {styles.followersTextNumber}>69</Text>
             <Text style = {styles.followersText}>Following</Text>
           </View>
-
           <View style = {styles.middle}>
             <Text style = {styles.followersTextNumber}>1.1b</Text>
             <Text style = {styles.followersText}>Followers</Text>
