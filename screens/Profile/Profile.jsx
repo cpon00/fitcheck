@@ -10,12 +10,37 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 
-
+import { getFirestore, doc, getDoc } from "@firebase/firestore";
 
 const Tab = createMaterialTopTabNavigator()
 
 function Profile() {
+
   const [index, setIndex] = useState(0);
+  const [userName, setUserName] = useState();
+  const [following, setFollowing] = useState();
+  const [followers, setFollowers] = useState();
+  const [postNumber, setPostNumber] = useState();
+  const [bio, setBio] = useState();
+
+
+  const firestore = getFirestore();
+  const usertest1 = doc(firestore, 'User-test/RjQWuGt56a9LRVoPGkvo')  
+  async function readASingleDocument() {
+    const userSnapshot = await getDoc(usertest1);
+    if(userSnapshot.exists()) {
+    const docData = userSnapshot.data();
+    //console.log(`Data: ${JSON.stringify(docData)}`);
+    //console.log(`New Data: ${docData.userName}`)
+    setUserName(docData.userName)
+    setFollowers(docData.followers)
+    setFollowing(docData.following)
+    setPostNumber(docData.postNumber)
+    setBio(docData.bio)
+    }
+}
+readASingleDocument()
+
   return (
     //<View style={{ flex: 1, alignItems: 'center' }}></View>
 
@@ -27,20 +52,20 @@ function Profile() {
         source={{uri: 'https://d2h1pu99sxkfvn.cloudfront.net/b0/7079909/339328872_uTMmxtG0qv/U5.jpg'}}>
         </Avatar>
 
-        <Text style = {styles.username}> @mymy123 </Text>
+        <Text style = {styles.username}> {userName} </Text>
         <View style ={{flexDirection: "row"}}>
           <View style = {styles.left}>
-            <Text style = {styles.followersTextNumber}>69</Text>
+            <Text style = {styles.followersTextNumber}>{following}</Text>
             <Text style = {styles.followersText}>Following</Text>
           </View>
 
           <View style = {styles.middle}>
-            <Text style = {styles.followersTextNumber}>1.1b</Text>
+            <Text style = {styles.followersTextNumber}>{followers}</Text>
             <Text style = {styles.followersText}>Followers</Text>
           </View>
 
           <View style = {styles.right}>
-            <Text style = {styles.followersTextNumber}>34</Text>
+            <Text style = {styles.followersTextNumber}>{postNumber}</Text>
             <Text style = {styles.followersText}>Posts</Text>
           </View>
         </View>
@@ -49,7 +74,7 @@ function Profile() {
           <Text style = {styles.followersTextNumber}>Edit Profile</Text>
         </TouchableOpacity>
 
-        <Text style = {styles.bio}>Most fitted of all time</Text>
+        <Text style = {styles.bio}>{bio}</Text>
       </View>
 
       <Tab.Navigator>
