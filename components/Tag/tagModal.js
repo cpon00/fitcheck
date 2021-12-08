@@ -4,20 +4,20 @@ import IndividualTag from "./indidualTag";
 import { StyleSheet } from "react-native";
 
 const product1 = {
-  tagImageUri: require("../../assets/photos/shirt.jpg"),
+  tagImageUri: require("../../assets/shirt.jpg"),
   tagBrandText: "Adidas",
   tagClothingText: "Adicolor Classics Trefoil Hoodie",
   tagUrl: "https://www.adidas.com/us/women-hoodies_sweatshirts",
 };
 const product2 = {
-  tagImageUri: require("../../assets/photos/pants.png"),
+  tagImageUri: require("../../assets/pants.png"),
   tagBrandText: "Priness Polly",
   tagClothingText: "Kirstyn Pants",
   tagUrl:
     "https://us.princesspolly.com/products/kirstyn-pants?variant=31240194818132",
 };
 const product3 = {
-  tagImageUri: require("../../assets/photos/shoes.png"),
+  tagImageUri: require("../../assets/shoes.png"),
   tagBrandText: "Steve Madden",
   tagClothingText: "Triple Platform Chelsea Boot",
   tagUrl:

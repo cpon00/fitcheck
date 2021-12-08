@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, ImageBackground } from "react-native";
-import styles from '../../pages/Search/SearchStyles'
+import styles from '../../screens/Search/SearchStyles'
 function CategoriesWindow({ name, img }) {
   return (
     <View style={styles.imgCenter}>

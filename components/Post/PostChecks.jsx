@@ -63,10 +63,10 @@ const PostChecks = (props) => {
           <Text style={styles.statsLabel}>{post.likes}</Text>
         </TouchableOpacity>
 
-        <View style={styles.iconContainer}>
+        <TouchableOpacity style={styles.iconContainer} onPress={()=> alert('Under Construction!')}>
           <MaterialCommunityIcons name={"message"} size={40} color={"white"} />
           <Text style={styles.statsLabel}>{post.comments}</Text>
-        </View>
+        </TouchableOpacity>
 
         <TouchableOpacity style={styles.iconContainer} onPress={toggleModal}>
           <MaterialCommunityIcons name={"tag"} size={40} color={"white"} />

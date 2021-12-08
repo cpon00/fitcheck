@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Button, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native'
+import { Pressable, StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native'
 import { Camera } from 'expo-camera'
+import { Icon } from 'react-native-elements'
 import * as ImagePicker from 'expo-image-picker'
 
 export default function App() {
@@ -46,7 +47,7 @@ export default function App() {
   }
 
   return (
-  <View>
+  <View style={styles.screen}>
     <View style={styles.cameraContainer}>
       <Camera 
         ref={ref => setCamera(ref)}
@@ -56,31 +57,54 @@ export default function App() {
         />
     </View>
 
-    <Button
-        title="Flip Image"
-        style={{ flex: 1 }}
-        onPress={() => {
-        setType(
-            type === Camera.Constants.Type.back
-                ? Camera.Constants.Type.front
-                : Camera.Constants.Type.back
-            );
-        }}>
-        </Button>
-        <Button title="Take Picture" style={{ flex: 1 }} onPress={() => takePicture()}/>
-        <Button title="Pick Image From Gallery" style={{ flex: 1 }} onPress={() => pickImage()} />
-        {image && <Image source={{ uri: image }} style={{ flex: 1 }} />}
+    <View style={styles.cameraButtonContainer}>
+      <Pressable
+          style={styles.cameraButton}
+          onPress={() => {
+          setType(
+              type === Camera.Constants.Type.back
+                  ? Camera.Constants.Type.front
+                  : Camera.Constants.Type.back
+              );
+          }}>
+          <Icon name='switch-camera'/>
+      </Pressable>
+      <Pressable style={styles.cameraButton} onPress={() => takePicture()}><Icon name="adjust"/></Pressable>
+      <Pressable style={styles.cameraButton} onPress={() => pickImage()}><Icon name="collections"/></Pressable>
+      {image && <Image source={{ uri: image }} style={{ flex: 1 }} />}
+     </View>
   </View>   
   );
 }
 
 const styles = StyleSheet.create({
     cameraContainer: {
-        flex: 1,
-        flexDirection: 'row'
+      flex: 1,
+      backgroundColor: 'white',
     },
     fixedRatio: {
-        flex: 1,
-        aspectRatio: 1
+      flex: 1,
+      aspectRatio: 1,
+      backgroundColor: 'white',
+    },
+    cameraButton: {
+      alignItems: "center",
+      justifyContent: "center",
+      width: 40,
+      height: 40,
+      backgroundColor: 'white',
+      color: 'black',
+      borderRadius: 100,
+      marginTop: 10,
+      marginHorizontal: 5
+    },
+    cameraButtonContainer: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    screen: {
+      backgroundColor: 'white',
     }
 })
