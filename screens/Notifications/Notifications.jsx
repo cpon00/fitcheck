@@ -3,11 +3,13 @@ import NotificationsView from "../../components/Notifications/NotificationsView"
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import MessagesView from "../../components/Notifications/MessagesView";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const Tab = createMaterialTopTabNavigator();
 
 function Notifications() {
   return (
+    <SafeAreaProvider style={{ top: "4.5%" }}>
     <Tab.Navigator>
       <Tab.Screen
         name="NotificationsView"
@@ -30,6 +32,7 @@ function Notifications() {
         }}
       />
     </Tab.Navigator>
+    </SafeAreaProvider>
   );
 }
 

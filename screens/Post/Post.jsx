@@ -4,7 +4,7 @@ import { Camera } from 'expo-camera'
 import { Icon } from 'react-native-elements'
 import * as ImagePicker from 'expo-image-picker'
 
-export default function App() {
+export default function Post({ navigation }) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null)
   const [hasGalleryPermission, setHasGalleryPermission] = useState(null)
   const [camera, setCamera] = useState(null)

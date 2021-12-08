@@ -7,40 +7,17 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { useState } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
-
-import { getFirestore, doc, getDoc } from "@firebase/firestore";
+import {useNavigation} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import SettingsScreen from "./SettingsScreen";
 
 const Tab = createMaterialTopTabNavigator()
+const Stack = createStackNavigator();
 
 function Profile() {
-
   const [index, setIndex] = useState(0);
-  const [userName, setUserName] = useState();
-  const [following, setFollowing] = useState();
-  const [followers, setFollowers] = useState();
-  const [postNumber, setPostNumber] = useState();
-  const [bio, setBio] = useState();
-
-
-  const firestore = getFirestore();
-  const usertest1 = doc(firestore, 'User-test/RjQWuGt56a9LRVoPGkvo')  
-  async function readASingleDocument() {
-    const userSnapshot = await getDoc(usertest1);
-    if(userSnapshot.exists()) {
-    const docData = userSnapshot.data();
-    //console.log(`Data: ${JSON.stringify(docData)}`);
-    //console.log(`New Data: ${docData.userName}`)
-    setUserName(docData.userName)
-    setFollowers(docData.followers)
-    setFollowing(docData.following)
-    setPostNumber(docData.postNumber)
-    setBio(docData.bio)
-    }
-}
-readASingleDocument()
-
+  const navigation = useNavigation()
   return (
     //<View style={{ flex: 1, alignItems: 'center' }}></View>
 
@@ -52,30 +29,31 @@ readASingleDocument()
         source={{uri: 'https://d2h1pu99sxkfvn.cloudfront.net/b0/7079909/339328872_uTMmxtG0qv/U5.jpg'}}>
         </Avatar>
 
-        <Text style = {styles.username}> {userName} </Text>
+        <Text style = {styles.username}> @mymy123 </Text>
         <View style ={{flexDirection: "row"}}>
           <View style = {styles.left}>
-            <Text style = {styles.followersTextNumber}>{following}</Text>
+            <Text style = {styles.followersTextNumber}>69</Text>
             <Text style = {styles.followersText}>Following</Text>
           </View>
-
           <View style = {styles.middle}>
-            <Text style = {styles.followersTextNumber}>{followers}</Text>
+            <Text style = {styles.followersTextNumber}>1.1b</Text>
             <Text style = {styles.followersText}>Followers</Text>
           </View>
 
           <View style = {styles.right}>
-            <Text style = {styles.followersTextNumber}>{postNumber}</Text>
+            <Text style = {styles.followersTextNumber}>34</Text>
             <Text style = {styles.followersText}>Posts</Text>
           </View>
         </View>
 
-        <TouchableOpacity style={styles.button} onPress={() => Alert.alert('Edit in progress')}>
-          <Text style = {styles.followersTextNumber}>Edit Profile</Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.push("SettingsScreen")}>
+         <Text style = {styles.buttonText}>Edit Profile</Text>
         </TouchableOpacity>
 
-        <Text style = {styles.bio}>{bio}</Text>
+        <Text style = {styles.bio}>Most fitted of all time</Text>
       </View>
+
+
 
       <Tab.Navigator>
         <Tab.Screen
@@ -90,24 +68,32 @@ readASingleDocument()
           }}
         />
 
-          <Tab.Screen
-            name = "Checks"
-            component = {ChecksView}
-            options = {{
-              tabBarLabel: "Checks",
-              tabBarShowLabel: false,
-              tabBarIcon: ({color}) => (
-                <MaterialCommunityIcons name="check-outline" color={color} size={24}/>
-              )
-            }}
-          />
+        <Tab.Screen
+          name = "Checks"
+          component = {ChecksView}
+          options = {{
+            tabBarLabel: "Checks",
+            tabBarShowLabel: false,
+            tabBarIcon: ({color}) => (
+              <MaterialCommunityIcons name="check-outline" color={color} size={24}/>
+            )
+          }}
+        />
       </Tab.Navigator>
     </SafeAreaProvider>
     
   );
 }
 
+
+
+
 const styles = StyleSheet.create({
+
+  buttonText: {
+    fontWeight: 'bold',
+    alignSelf: 'center',
+  },
   
   profilePicture: {
     marginTop: 15
@@ -162,17 +148,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
 
+
+
   button: {
     top: 15,
     marginBottom: 10,
-    width: "200%",
+    width: "120%",
     borderWidth: 1,
     borderRadius:7,
     borderColor:'grey',
-    alignItems: 'center',
+    alignSelf: 'center',
     backgroundColor: 'transparent',
     padding: 10,
-    alignSelf: 'center'
+
   },
 
   bio: {

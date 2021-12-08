@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { View, Button, TextInput,StyleSheet } from "react-native";
-
+import { View, Text, TextInput,StyleSheet } from "react-native";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "@firebase/firestore";
-import { db } from "../../App";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { db } from "../../config";
 
 export class Register extends Component {
   constructor(props) {
@@ -58,24 +58,51 @@ export class Register extends Component {
           style = {styles.input}
           onChangeText={(password) => this.setState({ password })}
         />
-        <Button onPress={() => this.onSignUp()} title="Sign Up" />
+        <TouchableOpacity style={styles.button} onPress={() => this.onSignUp()}>
+          <Text style={styles.buttonText}>SIGN UP</Text>
+        </TouchableOpacity>
       </View>
     );
   }
 }
 const styles = StyleSheet.create({
   input:{
-    height: 40,
+    height: 35,
     margin: 12,
-    borderWidth: 1,
+    borderWidth: .5,
     padding: 10,
-    borderRadius:10,
+    borderColor:"gray"
   },
   container:{
-    top:'40%'
+    top:'35%',
+    width: '80%',
+    alignSelf:'center',
+    backgroundColor:'#FAF9F6',
+    paddingTop:20,
+    borderRadius:15,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: .2,
+    shadowRadius: 5,
+    elevation: 3,
   },
   button:{
-    
+    marginTop:12,
+    alignSelf:'center',
+    backgroundColor:'skyblue',
+    width: '100%',
+    height: 50,
+    justifyContent:'center',
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15
+  },
+  buttonText:{
+    alignSelf:"center",
+    color:'white',
+    fontWeight: "400"
   }
 })
 export default Register;

@@ -39,11 +39,11 @@ const styles = StyleSheet.create({
     margin: 7.5,
   },
   textContainer: {
-    width: 230,
+    width: 210,
     height: 75,
     top: 7.5,
-    right: 7.5,
     position: "absolute",
+    alignSelf: "flex-end",
   },
   brandText: {
     marginBottom: 5,
