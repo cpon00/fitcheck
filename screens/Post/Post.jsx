@@ -23,6 +23,7 @@ export default function Post({ navigation }) {
 
   const takePicture = async () => {
     if(camera){
+        console.log("here")
         const data = await camera.takePictureAsync(null)
         setImage(data.uri)
     }
@@ -71,7 +72,7 @@ export default function Post({ navigation }) {
       </Pressable>
       <Pressable style={styles.cameraButton} onPress={() => takePicture()}><Icon name="adjust"/></Pressable>
       <Pressable style={styles.cameraButton} onPress={() => pickImage()}><Icon name="collections"/></Pressable>
-      {image && <Image source={{ uri: image }} style={{ flex: 1 }} />}
+      {console.log(image) && <Image source={{ uri: image }} style={{ flex: 1 }} />}
      </View>
   </View>   
   );
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       width: 40,
       height: 40,
-      backgroundColor: 'white',
+      backgroundColor: 'red',
       color: 'black',
       borderRadius: 100,
       marginTop: 10,

@@ -6,27 +6,27 @@ import uuid from "react-native-uuid";
 const users = [
   {
     name: "@halle",
-    comment: "cool fit!"
+    comment: "these with platforms would be hot!"
   },
   {
     name: "@carter",
-    comment: "needs some work"
+    comment: "try a black puffer jacket for outerwear"
   },
   {
     name: "@amaya",
-    comment: "not a fan of the tie"
+    comment: "I think a white button down would work"
   },
   {
     name: "@jason",
-    comment: "sick shoes"
+    comment: "grouping neutrals together always looks nice"
   },
   {
     name: "@adrian",
-    comment: "fire"
+    comment: "can't go wrong with a blazer"
   },
   {
     name: "@josh",
-    comment: "lol what r u wearing bro..."
+    comment: "Linen with Margiela tabi shoes would work"
   }
 ]
 

@@ -5,27 +5,27 @@ import uuid from "react-native-uuid";
 
 const users = [
   {
-    name: "@halle",
-    message: "hey"
+    name: "@hallegv",
+    message: "Hey have you heard of our Lord and Savior Jesus Christ?"
   },
   {
-    name: "@carter",
-    message: "sup"
+    name: "@quarterpawn",
+    message: "You should check out my page!"
   },
   {
-    name: "@amaya",
-    message: "yo"
+    name: "@amayak47",
+    message: "Are you interested in collabing with our brand?"
   },
   {
-    name: "@jason",
-    message: "Hey girlie! 😍✨ Love your look! Want to join us? Check DM 💅🏼"
+    name: "@jkalili",
+    message: "What's up my man, you should really check out this indie brand Vineyard Vines..."
   },
   {
-    name: "@adrian",
+    name: "@adrian.learn",
     message: "hi"
   },
   {
-    name: "@josh",
+    name: "@joshseaman",
     message: "hello"
   },
 ]
