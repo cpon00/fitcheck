@@ -1,22 +1,34 @@
 # fitcheck
 
-
 ## Overview
 
 Our app, Fitcheck, will allow users to share their pictures of their outfits. Similar to VSCO and TikTok, users can either upload pictures and videos to a public feed and show off their outfit of the day, or ask for suggestions to improve their fashion. Our app will provide filters with the ability to sort by different styles of fashion, such as “minimalist”, “cottage-core”, or “vintage”. Not only will our app allow users to express themselves in how they dress, it will allow collaboration through constructive efforts to improve one’s fashion. Our app is for anyone interested in fashion, or for anyone looking to get into fashion.
 
+## Screens
+
+<center><img src="assets/gifs/home_1.gif" width=50%/></a></center>
+<center><img src="assets/gifs/home_2.gif" width=50%/></a></center>
+<center><img src="assets/gifs/profile_1.gif" width=50%/></a></center>
+<center><img src="assets/gifs/profile_1.gif" width=50%/></a></center>
+<center><img src="assets/gifs/search_1.gif" width=50%/></a></center>
+<center><img src="assets/gifs/search_1.gif" width=50%/></a></center>
+<center><img src="assets/gifs/notifs_1.jpg" width=50%/></a></center>
+<center><img src="assets/gifs/notifs_1.jpg" width=50%/></a></center>
+
+<br>
 
 ## Running our Application:
+
 Clone repository from GitHub - cpon00/fitcheck
 
-1. Run ```npm install``` in the terminal at the Fitcheck directory 
+1. Run `npm install` in the terminal at the Fitcheck directory
 
-2. Run ```expo start``` from the same directory location 
+2. Run `expo start` from the same directory location
 
-3. On the locally hosted web browser, choose your preferred method to view the project 
+3. On the locally hosted web browser, choose your preferred method to view the project
 
-    - It is recommended that you download the expo application on your smartphone in order to have the best viewing and testing experience. (features may be limited from the web app)
-    
+   - It is recommended that you download the expo application on your smartphone in order to have the best viewing and testing experience. (features may be limited from the web app)
+
 ## Team
 
 | Role                 | Team Member                                    |
