@@ -10,32 +10,37 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 
+import { getAuth } from '@firebase/auth'
+
 import { getFirestore, doc, getDoc } from "@firebase/firestore";
+import {app, db} from '../../config'
 
 const Tab = createMaterialTopTabNavigator()
 
-function Profile() {
+const auth = getAuth()
 
+function Profile() {
   const [index, setIndex] = useState(0);
   const [userName, setUserName] = useState();
   const [following, setFollowing] = useState();
   const [followers, setFollowers] = useState();
   const [postNumber, setPostNumber] = useState();
   const [bio, setBio] = useState();
-
-
+  const [pronouns, setPronouns] = useState();
+  const [website, setWebsite] = useState();
   const firestore = getFirestore();
-  const usertest1 = doc(firestore, 'User-test/RjQWuGt56a9LRVoPGkvo')  
+  const usertest1 = doc(firestore, `users/${auth.currentUser.uid}`) 
+  console.log(auth.currentUser.uid)
   async function readASingleDocument() {
     const userSnapshot = await getDoc(usertest1);
     if(userSnapshot.exists()) {
     const docData = userSnapshot.data();
-    //console.log(`Data: ${JSON.stringify(docData)}`);
-    //console.log(`New Data: ${docData.userName}`)
-    setUserName(docData.userName)
+    setUserName(docData.name)
     setFollowers(docData.followers)
     setFollowing(docData.following)
     setPostNumber(docData.postNumber)
+    setPronouns(docData.pronouns)
+    setWebsite(docData.website)
     setBio(docData.bio)
     }
 }
