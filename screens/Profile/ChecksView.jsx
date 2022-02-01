@@ -25,7 +25,7 @@ const ChecksItems = users.map((user, i) => {
     <List.Item
       title={user}
       description={comments[i]}
-      key={uuid.v4()}
+      key={i}
       left={(props) => <List.Icon {...props} icon="account-circle-outline" />}
     />
   );

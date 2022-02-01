@@ -22,9 +22,9 @@ const auth = getAuth()
 function Profile() {
   const [index, setIndex] = useState(0);
   const [userName, setUserName] = useState();
-  const [following, setFollowing] = useState();
-  const [followers, setFollowers] = useState();
-  const [postNumber, setPostNumber] = useState();
+  const [following, setFollowing] = useState(0);
+  const [followers, setFollowers] = useState(0);
+  const [postNumber, setPostNumber] = useState(0);
   const [bio, setBio] = useState();
   const [pronouns, setPronouns] = useState();
   const [website, setWebsite] = useState();
