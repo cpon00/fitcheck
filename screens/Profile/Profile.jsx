@@ -9,6 +9,8 @@ import { useState } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
+import { createStackNavigator } from "@react-navigation/stack";
+import {useNavigation} from '@react-navigation/native'
 
 import { getAuth } from '@firebase/auth'
 
@@ -20,6 +22,7 @@ const Tab = createMaterialTopTabNavigator()
 const auth = getAuth()
 
 function Profile() {
+  const navigation = useNavigation();
   const [index, setIndex] = useState(0);
   const [userName, setUserName] = useState();
   const [following, setFollowing] = useState(0);
@@ -29,8 +32,7 @@ function Profile() {
   const [pronouns, setPronouns] = useState();
   const [website, setWebsite] = useState();
   const firestore = getFirestore();
-  const usertest1 = doc(firestore, `users/${auth.currentUser.uid}`) 
-  console.log(auth.currentUser.uid)
+  const usertest1 = doc(firestore, `users/${auth.currentUser.uid}`)
   async function readASingleDocument() {
     const userSnapshot = await getDoc(usertest1);
     if(userSnapshot.exists()) {
@@ -75,11 +77,13 @@ readASingleDocument()
           </View>
         </View>
 
-        <TouchableOpacity style={styles.button} onPress={() => Alert.alert('Edit in progress')}>
+        <TouchableOpacity style={styles.button} 
+          onPress={() => navigation.navigate('/SettingScreen.jsx')}>
           <Text style = {styles.followersTextNumber}>Edit Profile</Text>
         </TouchableOpacity>
 
         <Text style = {styles.bio}>{bio}</Text>
+        <Text style = {styles.bio}>{pronouns}</Text>
       </View>
 
       <Tab.Navigator>
