@@ -50,6 +50,7 @@ function TabNavi() {
           component={Upload}
           options={{
             tabBarLabel: "Upload",
+            headerShown: false,
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons
                 name="diamond-stone"

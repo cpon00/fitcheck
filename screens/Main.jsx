@@ -33,7 +33,9 @@ export class Main extends Component {
                   },
                   null
                 ]
-              }} initialRouteName="Home">
+              }}
+              initialRouteName="Home"
+              >
                 <Tab.Screen name="Home" component={HomeScreen} 
                 options={{
                     tabBarIcon: ({ color, size}) => (
@@ -60,7 +62,8 @@ export class Main extends Component {
                             <MaterialCommunityIcons name = "diamond-stone" color = {color} size = {52}/>
                         ),
                         headerShown: false,
-                    }}/>
+                    }}
+                    />
                 <Tab.Screen name="Notifications" component={NotificationsScreen}
                     options={{
                         tabBarIcon:({color, size}) => (
