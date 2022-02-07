@@ -1,13 +1,14 @@
 import { getAuth } from '@firebase/auth'
-import {doc, getDoc, orderBy, Timestamp} from '@firebase/firestore'
-import { USER_STATE_CHANGE } from '../constants/index';
+import {doc, collection, where, getDoc, getDocs, orderBy, query, Timestamp} from '@firebase/firestore'
+import { USER_STATE_CHANGE, USER_STATE_POSTS_CHANGE } from '../constants/index';
 
 import {app, db} from '../../config'
 
 
+const auth = getAuth()
+
 export function fetchUser(){
   return ((dispatch) => {
-    const auth = getAuth()
     const docRef = doc(db, 'users', auth.currentUser.uid)
     const docSnap = getDoc(docRef)
     .then((snapshot) => {
@@ -22,16 +23,15 @@ export function fetchUser(){
 
 export function fetchUserPosts(){
   return ((dispatch) => {
-    const auth = getAuth()
-    const docRef = doc(db, 'posts', auth.currentUser.uid)
-    const docSnap = getDoc(docRef)
-    .then((snapshot) => {
-      if(snapshot.exists){
-        console.log(snapshot.docs)
-        console.log("DOCS HERE")
-      } else {
-        console.log('DOES_NOT_EXIST')
-      }
+    const q = query(collection(db, 'posts'), where('id', '==', auth.currentUser.uid), orderBy("timestamp"))
+    const snapshot = getDocs(q).then((snapshot) => {
+      let posts = snapshot.docs.map(doc => {
+        const data = doc.data()
+        const id = doc.id
+        return {id, ...data}
+      })
+      console.log(posts)
+      dispatch({type: USER_POSTS_STATE_CHANGE, posts})
     })
   })
 }
