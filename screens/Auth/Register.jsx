@@ -26,6 +26,9 @@ export class Register extends Component {
           const docRef = setDoc(doc(db, "users", userCredential.user.uid), {
             name: name,
             email: email,
+            pronouns: '',
+            website: '',
+            bio: '',
           });
           console.log("Document written with ID", userCredential.user.uid);
         } catch (e) {
