@@ -103,7 +103,7 @@ export default function SaveScreen(props) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.header}>
-        <Pressable onPress={() => console.log({ props })}>
+        <Pressable onPress={() => props.navigation.pop()}>
           <Icon name={"chevron-left"} size={35} />
         </Pressable>
         <Text style={styles.headerText}>New Post</Text>
@@ -121,7 +121,7 @@ export default function SaveScreen(props) {
           style={{ height: 100, width: 100, marginLeft: "2%" }}
         />
         <TextInput
-          multiline="multiline"
+          multiline={true}
           placeholder="Write a description..."
           onChangeText={(caption) => setCaption(caption)}
           style={styles.inputStyle}
