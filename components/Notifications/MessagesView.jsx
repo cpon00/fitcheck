@@ -1,67 +1,66 @@
 import React from "react";
-import { Avatar,ListItem } from "react-native-elements";
+import { Avatar, ListItem } from "react-native-elements";
 import { List } from "react-native-paper";
 import uuid from "react-native-uuid";
-
+import { ImageBackground } from "react-native";
 const users = [
   {
     name: "@hallegv",
-    message: "Hey have you heard of our Lord and Savior Jesus Christ?"
+    message: "Hey have you heard of our Lord and Savior Jesus Christ?",
   },
   {
     name: "@quarterpawn",
-    message: "You should check out my page!"
+    message: "You should check out my page!",
   },
   {
     name: "@amayak47",
-    message: "Are you interested in collabing with our brand?"
+    message: "Are you interested in collabing with our brand?",
   },
   {
     name: "@jkalili",
-    message: "What's up my man, you should really check out this indie brand Vineyard Vines..."
+    message:
+      "What's up my man, you should really check out this indie brand Vineyard Vines...",
   },
   {
     name: "@adrian.learn",
-    message: "hi"
+    message: "hi",
   },
   {
     name: "@joshseaman",
-    message: "hello"
+    message: "hello",
   },
-]
-
+];
 
 const messageItems = users.map((user) => {
-    return (
-      <ListItem
-        title={user.name}
-        key={uuid.v4()}
-      >
+  return (
+    <ListItem title={user.name} key={uuid.v4()}>
       <Avatar
-            rounded
-            size="small"
-            source={{
-              uri: "https://d2h1pu99sxkfvn.cloudfront.net/b0/7079909/339328872_uTMmxtG0qv/U5.jpg",
-            }}
-          />
-          <ListItem.Content>
-          <ListItem.Title>
-          {user.name}
-          </ListItem.Title>
-          <ListItem.Subtitle>
-            {user.message}
-          </ListItem.Subtitle>
-          </ListItem.Content>
-      </ListItem>
-    );
+        rounded
+        size="small"
+        source={{
+          uri: "https://d2h1pu99sxkfvn.cloudfront.net/b0/7079909/339328872_uTMmxtG0qv/U5.jpg",
+        }}
+      />
+      <ListItem.Content>
+        <ListItem.Title>{user.name}</ListItem.Title>
+        <ListItem.Subtitle>{user.message}</ListItem.Subtitle>
+      </ListItem.Content>
+    </ListItem>
+  );
 });
 
 function MessagesView() {
   return (
-    <List.Section>
-      <List.Subheader>Messages</List.Subheader>
-      {messageItems}
-    </List.Section>
+    <ImageBackground
+      source={require("../../assets/background-explore.png")}
+      resizeMode="cover"
+      style={{ width: "100%", height: "100%", flex: 1 }}
+    >
+      <List.Section>
+        {/* <List.Subheader>Messages</List.Subheader> */}
+        {messageItems}
+      </List.Section>
+    </ImageBackground>
   );
 }
 
