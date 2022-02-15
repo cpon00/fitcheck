@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ImageBackground } from "react-native";
 
 import { getAuth } from "firebase/auth";
 
@@ -55,7 +55,7 @@ export class App extends Component {
     if (!loaded) {
       return (
         <View style={styles.preLoad}>
-          <Text>Loading...</Text>
+          <ImageBackground source = {require("./assets/fitcheck.png")} style = {{flex:1}}></ImageBackground>
         </View>
       );
     }

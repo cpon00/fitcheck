@@ -4,6 +4,9 @@
     "slug": "fitcheck",
     "version": "1.0.0",
     "assetBundlePatterns": ["**/*"],
-    "orientation": "portrait"
+    "orientation": "portrait",
+    "splash": {
+      "image": "./assets/fitcheck.png"
+    }
   }
 }

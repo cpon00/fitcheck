@@ -27,23 +27,26 @@ import { Icon } from "react-native-elements";
 
 export default function SaveScreen(props) {
   const [caption, setCaption] = useState("");
-  const storage = getStorage(app);
   const auth = getAuth();
+  const storage = getStorage();
   const metadata = {
     contentType: "image/jpeg",
   };
 
   const uploadImage = async () => {
     
-    const storage = getStorage();
-    const imageRef = ref()
+    
+    const storageRef = ref(storage, 'posts/' + auth.currentUser.uid + '/' + Math.random().toString(36))
+    console.log(storageRef)
 
-    const response = await fetch(props.route.params.image);
+
+    const response = await fetch(props.route.params.source)
+
     const blob = await response.blob();
     const storagePath = `posts/${auth.currentUser.uid}/${Math.random().toString(
       36
     )}`;
-    const storageRef = ref(storage, storagePath);
+    //const storageRef = ref(storage, storagePath);
     const uploadTask = uploadBytesResumable(storageRef, blob, metadata);
 
     uploadTask.on(
