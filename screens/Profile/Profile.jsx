@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 function Profile() {
   return (
-    <SafeAreaProvider style={{ top: "4.5%" }}>
+    <SafeAreaProvider style={{ top: "7.5%" }}>
       <Stack.Navigator>
         <Stack.Screen
           name="ProfileScreen"

@@ -35,20 +35,11 @@ export default function SaveScreen(props) {
 
   const uploadImage = async () => {
     
-    
     const storageRef = ref(storage, 'posts/' + auth.currentUser.uid + '/' + Math.random().toString(36))
-    console.log(storageRef)
-
-
     const response = await fetch(props.route.params.source)
-
     const blob = await response.blob();
-    const storagePath = `posts/${auth.currentUser.uid}/${Math.random().toString(
-      36
-    )}`;
-    //const storageRef = ref(storage, storagePath);
-    const uploadTask = uploadBytesResumable(storageRef, blob, metadata);
 
+    const uploadTask = uploadBytesResumable(storageRef, blob, metadata)
     uploadTask.on(
       "state_changed",
       (snapshot) => {
@@ -65,7 +56,7 @@ export default function SaveScreen(props) {
         }
       },
       (error) => {
-        console.log(error.code)
+        console.log(error)
         // A full list of error codes is available at
         // https://firebase.google.com/docs/storage/web/handle-errors
         switch (error.code) {
@@ -109,7 +100,6 @@ export default function SaveScreen(props) {
     );
   };
 
-  console.log(props.route.params)
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.header}>
@@ -117,8 +107,8 @@ export default function SaveScreen(props) {
           <Icon name={"chevron-left"} size={35} />
         </Pressable>
         <Text style={styles.headerText}>New Post</Text>
-        <Pressable onPress={() => uploadImage()}>
-          <Text style={{ color: "blue", fontWeight: "bold", fontSize: 16 }}>
+        <Pressable onPress={() => uploadImage() && props.navigation.popToTop()}>
+          <Text style={{ color: "blue", fontWeight: "600", fontSize: 18 }}>
             Share
           </Text>
         </Pressable>
@@ -160,7 +150,7 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 20,
-    fontWeight: "600",
+    fontWeight: "500",
   },
   inputStyle: {
     marginRight: "30%",

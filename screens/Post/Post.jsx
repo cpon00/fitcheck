@@ -40,7 +40,8 @@ export default function Post({ navigation }) {
 
   const takePicture = async () => {
     if (cameraRef.current) {
-      const data = await cameraRef.current.takePictureAsync();
+      const options = { quality: 0.1, base64: true, skipProcessing: true };
+      const data = await cameraRef.current.takePictureAsync(options);
       const source = data.uri
       if (source) {
         navigateToSave(source)

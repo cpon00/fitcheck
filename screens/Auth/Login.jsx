@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { View, Text, TextInput,StyleSheet } from "react-native";
+import { View, Text, TextInput,StyleSheet, ImageBackground } from "react-native";
+import background from "../../assets/fitcheck.png"
 
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 export class Login extends Component {
@@ -14,10 +15,10 @@ export class Login extends Component {
 
     this.onSignIn = this.onSignIn.bind(this);
   }
-
+  
   onSignIn() {
-    const { email, password } = this.state;
     const auth = getAuth();
+    const { email, password } = this.state;
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         console.log(result);
@@ -27,8 +28,15 @@ export class Login extends Component {
       });
   }
 
+  // forgotPassword = (Email) => {
+  //   const auth = getAuth()
+  //   auth.sendPasswordResetEmail(Email)
+  //   .then()
+  // }
+
   render() {
     return (
+      <ImageBackground source = {background} style = {{flex:1}}>
       <View style = {styles.container}>
         <Text style={styles.topText}>Email</Text>
         <TextInput
@@ -43,10 +51,17 @@ export class Login extends Component {
           style = {styles.input}
           onChangeText={(password) => this.setState({ password })}
         />
-        <TouchableOpacity onPress={() => this.onSignIn()} style={styles.button}>
+        <View style={styles.buttonContainer}>
+        <TouchableOpacity onPress={() => this.onSignIn()} style={styles.buttonLogIn}>
           <Text style={styles.buttonText}>LOG IN</Text>
         </TouchableOpacity>
+        <View style={styles.midLine}/>
+        <TouchableOpacity style={styles.buttonForgotPassword}>
+          <Text style={styles.buttonText}>FORGOT PASSWORD</Text>
+        </TouchableOpacity>
+        </View>
       </View>
+      </ImageBackground>
     );
   }
 }
@@ -60,7 +75,7 @@ const styles = StyleSheet.create({
     borderColor:"gray"
   },
   container:{
-    top:'35%',
+    top:'40%',
     width: '80%',
     alignSelf:'center',
     backgroundColor:'#FAF9F6',
@@ -87,13 +102,41 @@ const styles = StyleSheet.create({
   },
   buttonText:{
     alignSelf:"center",
-    color:'white',
+    color:'#FAF9F6',
     fontWeight: "400"
   },
   topText:{
     fontWeight: "300",
     marginLeft: 10,
     fontSize: 10
+  },
+  buttonLogIn:{
+    marginTop:12,
+    backgroundColor:'skyblue',
+    width: 166,
+    height: 50,
+    justifyContent:'center',
+    borderBottomLeftRadius: 15,
+  },
+  buttonForgotPassword:{
+    marginTop:12,
+    backgroundColor:'skyblue',
+    width: 166,
+    height: 50,
+    justifyContent:'center',
+    borderBottomRightRadius: 15
+  },
+  buttonContainer:{
+    flexDirection:"row",
+    justifyContent: "space-around"
+  },
+  midLine:{
+    marginTop:18,
+    position:"absolute",
+    height:40,
+    width: StyleSheet.hairlineWidth,
+    backgroundColor: "gray",
+    left:165
   }
 })
 export default Login;
