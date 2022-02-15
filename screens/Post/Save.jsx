@@ -34,6 +34,10 @@ export default function SaveScreen(props) {
   };
 
   const uploadImage = async () => {
+    
+    const storage = getStorage();
+    const imageRef = ref()
+
     const response = await fetch(props.route.params.image);
     const blob = await response.blob();
     const storagePath = `posts/${auth.currentUser.uid}/${Math.random().toString(
@@ -58,6 +62,7 @@ export default function SaveScreen(props) {
         }
       },
       (error) => {
+        console.log(error.code)
         // A full list of error codes is available at
         // https://firebase.google.com/docs/storage/web/handle-errors
         switch (error.code) {
@@ -100,6 +105,8 @@ export default function SaveScreen(props) {
       }
     );
   };
+
+  console.log(props.route.params)
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.header}>
@@ -115,9 +122,8 @@ export default function SaveScreen(props) {
       </View>
       <View style={styles.hairline} />
       <View style={styles.descriptionContainer}>
-        {/* <Image source={{ uri: props.route.params.image }} style={{ height: 100, width: 100, marginLeft: "2%" }}/> */}
         <Image
-          source={require("../../assets/alt.jpg")}
+          source={{uri: props.route.params.source}}
           style={{ height: 100, width: 100, marginLeft: "2%" }}
         />
         <TextInput

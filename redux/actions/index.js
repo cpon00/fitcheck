@@ -1,6 +1,6 @@
 import { getAuth } from '@firebase/auth'
 import {doc, collection, where, getDoc, getDocs, orderBy, query, Timestamp} from '@firebase/firestore'
-import { USER_STATE_CHANGE, USER_STATE_POSTS_CHANGE } from '../constants/index';
+import { USER_STATE_CHANGE, USER_POSTS_STATE_CHANGE } from '../constants/index';
 
 import {app, db} from '../../config'
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Pressable,
   StyleSheet,
@@ -17,31 +17,53 @@ export default function Post({ navigation }) {
   const [hasGalleryPermission, setHasGalleryPermission] = useState(null);
 
   //camera and image hooks
-  const [camera, setCamera] = useState(null);
-  const [image, setImage] = useState(null);
+  const cameraRef = useRef()
 
   //camera settings
   const [type, setType] = useState(Camera.Constants.Type.front);
   const [flash, setFlash] = useState("off");
   const [flashIcon, setFlashIcon] = useState("flash-off");
+
   useEffect(() => {
     (async () => {
-      const cameraStatus = await Camera.requestCameraPermissionsAsync();
-      setHasCameraPermission(cameraStatus.status === "granted");
+      const cameraPermissions = await Camera.requestCameraPermissionsAsync();
+      setHasCameraPermission(cameraPermissions.granted)
+    })();
+  }, []);
 
-      const galleryStatus =
-        await ImagePicker.requestMediaLibraryPermissionsAsync();
-      setHasGalleryPermission(galleryStatus.status === "granted");
+  useEffect(() => {
+    (async () => {
+      const galleryPermissions = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      setHasGalleryPermission(galleryPermissions.granted)
     })();
   }, []);
 
   const takePicture = async () => {
-    if (camera) {
-      const data = await camera.takePictureAsync(null);
-      setImage(data.uri);
-      console.log(data.uri);
-      navigateToSave();
+    if (cameraRef.current) {
+      const data = await cameraRef.current.takePictureAsync();
+      const source = data.uri
+      if (source) {
+        navigateToSave(source)
+      }
     }
+  };
+
+  const pickImage = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [1, 1],
+      quality: 1,
+    });
+
+    if (!result.cancelled) {
+      const source = result.uri
+      navigateToSave(source);
+    }
+  };
+
+  const navigateToSave = ( source ) => {
+    navigation.navigate("New Post", { source });
   };
 
   const toggleFlash = () => {
@@ -54,34 +76,15 @@ export default function Post({ navigation }) {
     }
   };
 
-  const pickImage = async () => {
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      aspect: [1, 1],
-      quality: 1,
-    });
-
-    if (!result.cancelled) {
-      setImage(result.uri);
-      navigateToSave();
-    } else {
-    }
-  };
-
-  const navigateToSave = () => {
-    navigation.navigate("New Post", { image });
-  };
-
   if (!hasCameraPermission || !hasGalleryPermission) {
-    return <Text style={styles.access}>ACCESS REQUIRED</Text>;
+    return <Text style={styles.access}>Access Required</Text>;
   }
 
   return (
-    <View style={styles.screen}>
+    <View>
       <View style={styles.cameraContainer}>
         <Camera
-          ref={(ref) => setCamera(ref)}
+          ref={cameraRef}
           flashMode={flash}
           style={styles.fixedRatio}
           type={type}
@@ -133,10 +136,6 @@ export default function Post({ navigation }) {
         >
           <Icon name="switch-camera" color={"#f8f4f4"} />
         </Pressable>
-
-        {console.log(image) && (
-          <Image source={{ uri: image }} style={{ flex: 1 }} />
-        )}
       </View>
     </View>
   );
@@ -149,7 +148,6 @@ const styles = StyleSheet.create({
   },
 
   fixedRatio: {
-    //aspectRatio: 1,
     height: Dimensions.get("window").height,
     width: Dimensions.get("window").width,
   },
@@ -166,11 +164,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     alignItems: "center",
     top: "175%",
-    // paddingBottom: 10,
   },
-  // screen: {
-  //   backgroundColor: 'red',
-  // },
   captureCamera: {
     alignItems: "center",
     justifyContent: "center",
