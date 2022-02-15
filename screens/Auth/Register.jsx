@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { View, Text, TextInput,StyleSheet } from "react-native";
+import { View, Text, TextInput,StyleSheet, ImageBackground } from "react-native";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "@firebase/firestore";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { db } from "../../config";
+
+import background from "../../assets/fitcheck.png"
 
 export class Register extends Component {
   constructor(props) {
@@ -44,6 +46,7 @@ export class Register extends Component {
 
   render() {
     return (
+      <ImageBackground source = {background} style = {{flex:1}}>
       <View style = {styles.container}>
         <TextInput
           placeholder="name"
@@ -65,6 +68,7 @@ export class Register extends Component {
           <Text style={styles.buttonText}>SIGN UP</Text>
         </TouchableOpacity>
       </View>
+      </ImageBackground>
     );
   }
 }

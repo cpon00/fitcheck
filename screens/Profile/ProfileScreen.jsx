@@ -84,7 +84,7 @@ readASingleDocument()
         </TouchableOpacity>
 
         <Text style = {styles.bio}>{bio}</Text>
-        <Text style = {styles.bio}>{pronouns}</Text>
+        <Text style = {styles.pronouns}>{pronouns}</Text>
       </View>
 
       <Tab.Navigator>
@@ -187,10 +187,13 @@ const styles = StyleSheet.create({
 
   bio: {
     fontSize: 14,
-    marginTop: 22,
-    marginBottom: 15
+    marginTop: 12,
+    marginBottom: 5
+  },
+  pronouns: {
+    fontSize: 12,
+    marginBottom: 8
   }
-
 })
 
 export default Profile;
