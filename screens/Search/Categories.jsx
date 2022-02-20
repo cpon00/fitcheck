@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   StatusBar,
   TouchableOpacity,
+  TouchableHighlightBase,
 } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import  CategoriesWindow  from "../../components/SearchComponents/CategoriesWindow";
@@ -19,6 +20,7 @@ const Categories = (props) => {
   const related = require('./SearchWindowRelated.json')
   const title = props?.route?.params?.title
   const image = props?.route?.params?.image
+  const r1image = related.Minimalist.r1image
   return (
     <SafeAreaView>
       <StatusBar barStyle="dark-content" />
@@ -49,7 +51,7 @@ const Categories = (props) => {
         </View>
         <View style={styles.card}>
           <SearchWindow
-            img={JSON.stringify(related[title].r1image)}
+            img= {related[title].r1image}
             name={related[title].r1title}
           />
           <SearchWindow

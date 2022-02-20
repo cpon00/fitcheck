@@ -5,6 +5,7 @@ import { TouchableOpacity } from "react-native";
 
 function SearchWindow({ name, img}) {
   const navigation = useNavigation()
+  console.log({img})
   return (
     <TouchableOpacity onPress={() => navigation.push('Categories',{title:name, image:img })}> 
     <ImageBackground
