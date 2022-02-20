@@ -1,8 +1,18 @@
 import React, { Component } from "react";
-import { View, Text, TextInput,StyleSheet, ImageBackground } from "react-native";
-import background from "../../assets/fitcheck.png"
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  ImageBackground,
+} from "react-native";
+import background from "../../assets/fitcheck.png";
 
-import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from "firebase/auth";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 export class Login extends Component {
@@ -15,7 +25,7 @@ export class Login extends Component {
 
     this.onSignIn = this.onSignIn.bind(this);
   }
-  
+
   onSignIn() {
     const auth = getAuth();
     const { email, password } = this.state;
@@ -36,107 +46,113 @@ export class Login extends Component {
 
   render() {
     return (
-      <ImageBackground source = {background} style = {{flex:1}}>
-      <View style = {styles.container}>
-        <Text style={styles.topText}>Email</Text>
-        <TextInput
-          placeholder="email"
-          style = {styles.input}
-          onChangeText={(email) => this.setState({ email })}
-        />
-        <Text style={styles.topText}>Password</Text>
-        <TextInput
-          placeholder="password"
-          secureTextEntry={true}
-          style = {styles.input}
-          onChangeText={(password) => this.setState({ password })}
-        />
-        <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={() => this.onSignIn()} style={styles.buttonLogIn}>
-          <Text style={styles.buttonText}>LOG IN</Text>
-        </TouchableOpacity>
-        <View style={styles.midLine}/>
-        <TouchableOpacity style={styles.buttonForgotPassword}>
-          <Text style={styles.buttonText}>FORGOT PASSWORD</Text>
-        </TouchableOpacity>
+      <ImageBackground source={background} style={{ flex: 1 }}>
+        <View style={styles.container}>
+          <Text style={styles.topText}>Email</Text>
+          <TextInput
+            placeholder="email"
+            style={styles.input}
+            onChangeText={(email) => this.setState({ email })}
+          />
+          <Text style={styles.topText}>Password</Text>
+          <TextInput
+            placeholder="password"
+            secureTextEntry={true}
+            style={styles.input}
+            onChangeText={(password) => this.setState({ password })}
+          />
+          <View style={styles.buttonContainer}>
+            <View style={{ width: "50%" }}>
+              <TouchableOpacity
+                onPress={() => this.onSignIn()}
+                style={styles.buttonLogIn}
+              >
+                <Text style={styles.buttonText}>LOG IN</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.midLine} />
+            <View style={{ width: "50%" }}>
+              <TouchableOpacity style={styles.buttonForgotPassword}>
+                <Text style={styles.buttonText}>FORGOT PASSWORD</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
         </View>
-      </View>
       </ImageBackground>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  input:{
+  input: {
     height: 35,
     margin: 12,
-    borderWidth: .5,
+    borderWidth: 0.5,
     padding: 10,
-    borderColor:"gray"
+    borderColor: "gray",
   },
-  container:{
-    top:'40%',
-    width: '80%',
-    alignSelf:'center',
-    backgroundColor:'#FAF9F6',
-    paddingTop:20,
-    borderRadius:15,
-    shadowColor: '#000',
+  container: {
+    top: "40%",
+    width: "80%",
+    alignSelf: "center",
+    backgroundColor: "#FAF9F6",
+    paddingTop: 20,
+    borderRadius: 15,
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 1,
     },
-    shadowOpacity: .2,
+    shadowOpacity: 0.2,
     shadowRadius: 5,
     elevation: 3,
   },
-  button:{
-    marginTop:12,
-    alignSelf:'center',
-    backgroundColor:'skyblue',
-    width: '100%',
+  button: {
+    marginTop: 12,
+    alignSelf: "center",
+    backgroundColor: "skyblue",
+    width: "100%",
     height: 50,
-    justifyContent:'center',
+    justifyContent: "center",
     borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15
+    borderBottomRightRadius: 15,
   },
-  buttonText:{
-    alignSelf:"center",
-    color:'#FAF9F6',
-    fontWeight: "400"
+  buttonText: {
+    alignSelf: "center",
+    color: "#FAF9F6",
+    fontWeight: "400",
   },
-  topText:{
+  topText: {
     fontWeight: "300",
     marginLeft: 10,
-    fontSize: 10
+    fontSize: 10,
   },
-  buttonLogIn:{
-    marginTop:12,
-    backgroundColor:'skyblue',
-    width: 166,
+  buttonLogIn: {
+    marginTop: 12,
+    backgroundColor: "skyblue",
     height: 50,
-    justifyContent:'center',
+    justifyContent: "center",
     borderBottomLeftRadius: 15,
   },
-  buttonForgotPassword:{
-    marginTop:12,
-    backgroundColor:'skyblue',
-    width: 166,
+  buttonForgotPassword: {
+    marginTop: 12,
+    backgroundColor: "skyblue",
     height: 50,
-    justifyContent:'center',
-    borderBottomRightRadius: 15
+    justifyContent: "center",
+    borderBottomRightRadius: 15,
   },
-  buttonContainer:{
-    flexDirection:"row",
-    justifyContent: "space-around"
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    width: "100%",
   },
-  midLine:{
-    marginTop:18,
-    position:"absolute",
-    height:40,
+  midLine: {
+    marginTop: 18,
+    position: "absolute",
+    height: 40,
     width: StyleSheet.hairlineWidth,
     backgroundColor: "gray",
-    left:165
-  }
-})
+    zIndex: 15,
+  },
+});
 export default Login;
