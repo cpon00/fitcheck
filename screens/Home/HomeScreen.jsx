@@ -14,7 +14,7 @@ function HomeScreen() {
         initialRouteName={"Critic"}
         screenOptions={{
           style: {
-            backgroundColor: "#f8f4f4",
+            // backgroundColor: "#f8f4f4",
             paddingBottom: 3,
           },
         }}
@@ -24,6 +24,8 @@ function HomeScreen() {
           component={Flex}
           options={{
             tabBarIndicatorContainerStyle: { backgroundColor: "#f6f3ed" },
+            tabBarActiveTintColor: "#3042ff",
+            tabBarInactiveTintColor: "grey",
             tabBarIndicatorStyle: {
               backgroundColor: "#f6f3ed",
               height: "100%",
@@ -39,11 +41,13 @@ function HomeScreen() {
           name="Checks"
           component={Checks}
           options={{
+            tabBarIndicatorContainerStyle: { backgroundColor: "#f6f3ed" },
+            tabBarActiveTintColor: "#3042ff",
+            tabBarInactiveTintColor: "grey",
             tabBarIndicatorStyle: {
               backgroundColor: "#f6f3ed",
               height: "100%",
             },
-            tabBarIndicatorContainerStyle: { backgroundColor: "#f6f3ed" },
             tabBarLabel: "Checks",
             tabBarShowLabel: false,
             tabBarIcon: ({ color }) => (

@@ -28,8 +28,11 @@ export class Main extends Component {
         return(
             <Tab.Navigator screenOptions={{
                 "tabBarShowLabel": false,
+                "tabBarActiveTintColor": "#3042ff",
+                "tabBarInactiveTintColor": "grey",
                 "tabBarStyle": [
                   {
+                    "backgroundColor": "#f6f3ed",
                     "display": "flex"
                   },
                   null
@@ -40,7 +43,7 @@ export class Main extends Component {
                 <Tab.Screen name="Home" component={HomeScreen} 
                 options={{
                     tabBarIcon: ({ color, size}) => (
-                        <MaterialCommunityIcons name = "home" color = {color} size = {26}/>
+                        <MaterialCommunityIcons name = "home" color= {color} size = {26}/>
                     ),
                     headerShown: false,
                 }}/>

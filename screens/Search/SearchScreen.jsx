@@ -17,12 +17,7 @@ const SearchScreen = () => {
   const onChangeSearch = (query) => setSearchQuery(query);
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ImageBackground
-        source={require("../../assets/background-explore.png")}
-        resizeMode="cover"
-        //blurRadius={8}
-        style={{ width: "100%", height: "100%", flex: 1 }}
-      >
+
         <StatusBar barStyle="dark-content" />
         <ScrollView contentContainerStyle={{ paddingBottom: 40 }}>
           <Searchbar
@@ -96,7 +91,6 @@ const SearchScreen = () => {
             </View>
           </View>
         </ScrollView>
-      </ImageBackground>
     </SafeAreaView>
   );
 };
