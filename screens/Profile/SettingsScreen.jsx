@@ -108,11 +108,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-around",
     width: "100%",
-    backgroundColor: "red",
   },
   midLine: {
     marginTop: 18,
-    position: "absolute",
     height: 40,
     width: StyleSheet.hairlineWidth,
     backgroundColor: "gray",

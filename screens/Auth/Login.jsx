@@ -148,7 +148,6 @@ const styles = StyleSheet.create({
   },
   midLine: {
     marginTop: 18,
-    position: "absolute",
     height: 40,
     width: StyleSheet.hairlineWidth,
     backgroundColor: "gray",
