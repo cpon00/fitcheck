@@ -2,7 +2,7 @@ import React from "react";
 import { Avatar, ListItem } from "react-native-elements";
 import { List } from "react-native-paper";
 import uuid from "react-native-uuid";
-import { ImageBackground } from "react-native";
+import { View } from "react-native";
 
 const users = [
   {
@@ -51,16 +51,12 @@ const notifsItems = users.map((user) => {
 
 function NotificationsView() {
   return (
-    // <ImageBackground
-    //   source={require("../../assets/background-explore.png")}
-    //   resizeMode="cover"
-    //   style={{ width: "100%", height: "100%", flex: 1 }}
-    // >
+    <View style ={{backgroundColor:"white"}}>
     <List.Section>
       {/* <List.Subheader></List.Subheader> */}
       {notifsItems}
     </List.Section>
-    // </ImageBackground>
+    </View>
   );
 }
 
