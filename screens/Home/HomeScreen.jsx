@@ -26,10 +26,6 @@ function HomeScreen() {
             tabBarIndicatorContainerStyle: { backgroundColor: "#f6f3ed" },
             tabBarActiveTintColor: "#3042ff",
             tabBarInactiveTintColor: "grey",
-            tabBarIndicatorStyle: {
-              backgroundColor: "#f6f3ed",
-              height: "100%",
-            },
             tabBarLabel: "Flex",
             tabBarShowLabel: false,
             tabBarIcon: ({ color }) => (
@@ -44,10 +40,7 @@ function HomeScreen() {
             tabBarIndicatorContainerStyle: { backgroundColor: "#f6f3ed" },
             tabBarActiveTintColor: "#3042ff",
             tabBarInactiveTintColor: "grey",
-            tabBarIndicatorStyle: {
-              backgroundColor: "#f6f3ed",
-              height: "100%",
-            },
+
             tabBarLabel: "Checks",
             tabBarShowLabel: false,
             tabBarIcon: ({ color }) => (

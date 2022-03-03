@@ -10,14 +10,19 @@ const Tab = createMaterialTopTabNavigator();
 function Notifications() {
   return (
     <SafeAreaProvider style={{ top: "4.5%" }}>
-      <Tab.Navigator>
+      <Tab.Navigator screenOptions={{
+        tabBarIndicatorContainerStyle: { backgroundColor: "#f6f3ed" },
+                "tabBarShowLabel": false,
+                "tabBarActiveTintColor": "#3042ff",
+                "tabBarInactiveTintColor": "grey",
+              }
+                }>
         <Tab.Screen
           name="NotificationsView"
           component={NotificationsView}
           options={{
-            tabBarLabel: "Notifications",
             tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="bell" color={color} size={24} />
+              <MaterialCommunityIcons name="bell" color={color} size={22} />
             ),
           }}
         />
@@ -27,7 +32,7 @@ function Notifications() {
           options={{
             tabBarLabel: "Messages",
             tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="chat" color={color} size={24} />
+              <MaterialCommunityIcons name="chat" color={color} size={22} />
             ),
           }}
         />

@@ -2,7 +2,7 @@ import React from "react";
 import { Avatar, ListItem } from "react-native-elements";
 import { List } from "react-native-paper";
 import uuid from "react-native-uuid";
-import { ImageBackground } from "react-native";
+import { View,StyleSheet } from "react-native";
 const users = [
   {
     name: "@hallegv",
@@ -45,22 +45,19 @@ const messageItems = users.map((user) => {
         <ListItem.Title>{user.name}</ListItem.Title>
         <ListItem.Subtitle>{user.message}</ListItem.Subtitle>
       </ListItem.Content>
+      {/* <View style={{backgroundColor: "gray", borderBottomWidth: StyleSheet.hairlineWidth ,margin: 5, zIndex: 100}}/> */}
     </ListItem>
   );
 });
 
 function MessagesView() {
   return (
-    <ImageBackground
-      source={require("../../assets/background-explore.png")}
-      resizeMode="cover"
-      style={{ width: "100%", height: "100%", flex: 1 }}
-    >
+    <View style={{backgroundColor:"white"}}>
       <List.Section>
         {/* <List.Subheader>Messages</List.Subheader> */}
         {messageItems}
       </List.Section>
-    </ImageBackground>
+    </View>
   );
 }
 
