@@ -17,7 +17,6 @@ import { getAuth } from '@firebase/auth'
 import { getFirestore, doc, getDoc } from "@firebase/firestore";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import {app, db} from '../../config'
-//import storage from '@react-native-firebase/storage';
 
 const Tab = createMaterialTopTabNavigator()
 
@@ -37,24 +36,7 @@ function Profile() {
   const [imageUrl, setImageUrl] = useState(undefined);
 
   
-  // useEffect(() => {
-  //   storage()
-  //     .ref('/pfp/IMG_8322.jpeg') //name in storage in firebase console
-  //     .getDownloadURL()
-  //     .then((url) => {
-  //       console.log("img url:" + url)
-  //       setImageUrl(url);
-  //     })
-  //     .catch((e) => console.log('Errors while downloading => ', e));
-  // }, []);
 
-  // async function getpfp() {
-  //   //const ref = firebase.storage().ref('/pfp/IMG_8322.jpeg');
-  //   //this.pfp = await storage().ref.getDownloadURL();
-  //   setImageUrl(await storage().ref('/pfp/IMG_8322.jpeg').getDownloadURL())
-  //   console.log("ran")
-  // }
-  // getpfp()
   
   
   const user = doc(firestore, `users/${auth.currentUser.uid}`)
