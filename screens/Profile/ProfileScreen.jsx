@@ -5,7 +5,7 @@ import { View, Text, StyleSheet, Button, Alert} from "react-native";
 import {Avatar} from 'react-native-elements';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
@@ -15,6 +15,7 @@ import {useNavigation} from '@react-navigation/native'
 import { getAuth } from '@firebase/auth'
 
 import { getFirestore, doc, getDoc } from "@firebase/firestore";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import {app, db} from '../../config'
 
 const Tab = createMaterialTopTabNavigator()
@@ -32,10 +33,18 @@ function Profile() {
   const [pronouns, setPronouns] = useState();
   const [website, setWebsite] = useState();
   const firestore = getFirestore();
-  const usertest1 = doc(firestore, `users/${auth.currentUser.uid}`)
+  const [imageUrl, setImageUrl] = useState(undefined);
+
+  
+
+  
+  
+  const user = doc(firestore, `users/${auth.currentUser.uid}`)
+
   async function readASingleDocument() {
-    const userSnapshot = await getDoc(usertest1);
-    if(userSnapshot.exists()) {
+    // const storageRef = storage.getReference('/pfp/IMG_8322.jpeg')
+    // setImageUrl(storageRef.getDownloadUrl())
+    const userSnapshot = await getDoc(user);
     const docData = userSnapshot.data();
     setUserName(docData.name)
     setFollowers(docData.followers)
@@ -44,10 +53,30 @@ function Profile() {
     setPronouns(docData.pronouns)
     setWebsite(docData.website)
     setBio(docData.bio)
-    }
-
 }
 readASingleDocument()
+
+const storage = getStorage()
+const pfpRef = ref(storage, '/pfp/IMG_8322.jpeg')
+
+getDownloadURL(pfpRef)
+  .then((url) => {
+    setImageUrl(url)
+    // `url` is the download URL for 'images/stars.jpg'
+    // This can be downloaded directly:
+    const xhr = new XMLHttpRequest();
+    xhr.responseType = 'blob';
+    xhr.onload = (event) => {
+      const blob = xhr.response;
+    };
+    xhr.open('GET', url);
+    xhr.send();
+  })
+  .catch((error) => {
+    console.log("error");
+    //put a default picture here
+  });
+
 
   return (
     //<View style={{ flex: 1, alignItems: 'center' }}></View>
@@ -57,9 +86,8 @@ readASingleDocument()
         <Avatar 
         rounded
         size = 'large'
-        source={{uri: 'https://d2h1pu99sxkfvn.cloudfront.net/b0/7079909/339328872_uTMmxtG0qv/U5.jpg'}}>
+        source={{uri: imageUrl}}>
         </Avatar>
-
         <Text style = {styles.username}> {userName} </Text>
         <View style ={{flexDirection: "row"}}>
           <View style = {styles.left}>
