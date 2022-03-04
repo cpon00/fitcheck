@@ -12,6 +12,7 @@ const PostFlex = (props) => {
   const [isLiked, setIsLiked] = useState(false);
   const [paused, setPaused] = useState(true);
   const [isModalVisible, setModalVisible] = useState(false);
+  const isVideo = false;
 
   const onPlayPausePress = () => {
     setPaused(!paused);
@@ -20,6 +21,16 @@ const PostFlex = (props) => {
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
+
+  const ifVideo = () => {
+    if (post.videoUri.includes(".mp4")) {
+      isVideo=true
+      console.log(isVideo)
+      console.log(isVideo)
+      console.log(isVideo)
+      console.log(isVideo)
+    }
+  }
 
   //need variable to tell if we like the post or not from backend TODO BACKEND
   const onLikePress = () => {
@@ -31,9 +42,12 @@ const PostFlex = (props) => {
     setIsLiked(!isLiked);
   };
 
+
   return (
     <View style={styles.container}>
-      <TouchableWithoutFeedback onPress={onPlayPausePress}>
+      
+      {/* FOR VIDEO INTEGRATION  */}
+      {/* <TouchableWithoutFeedback onPress={onPlayPausePress}>
         <Video
           source={post.videoUri}
           style={styles.postVideo}
@@ -41,7 +55,12 @@ const PostFlex = (props) => {
           isLooping
           shouldPlay={paused}
         />
-      </TouchableWithoutFeedback>
+      </TouchableWithoutFeedback> */}
+      
+        <Image
+          source={post.videoUri}
+          style={styles.postVideo}
+        />
 
       <View style={styles.rightContainer}>
         <Image

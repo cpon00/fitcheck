@@ -38,7 +38,7 @@ const PostChecks = (props) => {
 
   return (
     <View style={styles.container}>
-      <TouchableWithoutFeedback onPress={onPlayPausePress}>
+      {/* <TouchableWithoutFeedback onPress={onPlayPausePress}>
         <Video
           source={post.videoUri}
           style={styles.postVideo}
@@ -46,7 +46,12 @@ const PostChecks = (props) => {
           isLooping
           shouldPlay={paused}
         />
-      </TouchableWithoutFeedback>
+      </TouchableWithoutFeedback> */}
+      
+      <Image
+          source={post.videoUri}
+          style={styles.postVideo}
+        />
 
       <View style={styles.rightContainer}>
         <Image
