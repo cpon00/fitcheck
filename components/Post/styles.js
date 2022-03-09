@@ -4,13 +4,14 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     height: Dimensions.get("window").height,
+    justifyContent: "center",
   },
   postVideo: {
-    height: Dimensions.get("window").height,
+    height: "100%",
     width: "100%",
-    position: "absolute",
-    top: -80,
+    backgroundColor: "black",
   },
+
   rightContainer: {
     position: "absolute",
     alignSelf: "flex-end",
