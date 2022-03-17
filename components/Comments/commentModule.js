@@ -1,9 +1,6 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
-import {
-  ScrollView,
-  TouchableWithoutFeedback,
-} from "react-native-gesture-handler";
+import { StyleSheet } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import Comment from "./comment";
 const CommentModule = () => {
   return (
@@ -11,25 +8,22 @@ const CommentModule = () => {
       showsVerticalScrollIndicator={true}
       style={{ flexDirection: "column" }}
     >
-      <TouchableWithoutFeedback>
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-        <Comment />
-      </TouchableWithoutFeedback>
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
+      <Comment />
     </ScrollView>
   );
 };
-const styles = StyleSheet.create({});
 export default CommentModule;

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Dimensions } from "react-native";
+import { View, Dimensions } from "react-native";
 import { StyleSheet, KeyboardAvoidingView } from "react-native";
 import { TextInput } from "react-native-paper";
 import CommentModule from "./commentModule";
@@ -13,7 +13,7 @@ const CommentModal = () => {
       <KeyboardAvoidingView
         style={modalStyles.bottomBar}
         behavior="position"
-        keyboardVerticalOffset="230"
+        keyboardVerticalOffset="218"
       >
         <TextInput
           placeholder="Add a comment..."
@@ -52,7 +52,6 @@ const modalStyles = StyleSheet.create({
     height: "7%",
     width: "100%",
     bottom: "8%",
-    zIndex: 50,
   },
   commentContainer: {
     alignSelf: "center",

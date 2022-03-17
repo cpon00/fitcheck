@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, Pressable } from "react-native";
 import { StyleSheet } from "react-native";
 
 const Comment = () => {
   return (
-    <View>
+    <Pressable>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
@@ -19,7 +19,7 @@ const Comment = () => {
         </View>
       </View>
       <View style={styles.hairline}></View>
-    </View>
+    </Pressable>
   );
 };
 const styles = StyleSheet.create({

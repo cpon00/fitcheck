@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { View, Text, Image } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import styles from "./styles";
@@ -92,17 +92,19 @@ const PostFlex = (props) => {
         </TouchableOpacity>
       </View>
 
-      <Modal
+      {/* <Modal
         isVisible={isModalVisible}
         swipeDirection={["down"]}
         onBackdropPress={toggleTagModal}
         style={{ zIndex: -100 }}
       >
         <TagModal />
-      </Modal>
+      </Modal> */}
 
       <Modal
         isVisible={isCommentModalVisible}
+        propagateSwipe={true}
+        // swipeDirection={["down"]}
         swipeDirection={["down"]}
         onBackdropPress={toggleCommentModal}
         style={{ justifyContent: "flex-end" }}
