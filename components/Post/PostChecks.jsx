@@ -3,27 +3,32 @@ import {
   View,
   Text,
   Image,
-  TouchableWithoutFeedback,
 } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import styles from "./styles";
-import { Video } from "expo-av";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Modal from "react-native-modal";
 import TagModal from "../Tag/tagModal";
+import CommentModal from "../Comments/commentModal";
 
 const PostChecks = (props) => {
   const [post, setPost] = useState(props.post);
   const [isLiked, setIsLiked] = useState(false);
-  const [paused, setPaused] = useState(true);
+  // const [paused, setPaused] = useState(true);
   const [isModalVisible, setModalVisible] = useState(false);
+  const [isCommentModalVisible, setCommentModalVisible] = useState(false);
 
-  const onPlayPausePress = () => {
-    setPaused(!paused);
-  };
+
+  // const onPlayPausePress = () => {
+  //   setPaused(!paused);
+  // };
 
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
+  };
+
+  const toggleCommentModal = () => {
+    setCommentModalVisible(!isCommentModalVisible);
   };
 
   //need variable to tell if we like the post or not from backend TODO BACKEND
@@ -68,7 +73,7 @@ const PostChecks = (props) => {
           <Text style={styles.statsLabel}>{post.likes}</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.iconContainer} onPress={()=> alert('Under Construction!')}>
+        <TouchableOpacity style={styles.iconContainer} onPress={toggleCommentModal}>
           <MaterialCommunityIcons name={"message"} size={40} color={"white"} />
           <Text style={styles.statsLabel}>{post.comments}</Text>
         </TouchableOpacity>
@@ -78,15 +83,23 @@ const PostChecks = (props) => {
         </TouchableOpacity>
       </View>
 
-      <TouchableWithoutFeedback>
         <Modal
           isVisible={isModalVisible}
-          swipeDirection={["up", "down"]}
+          swipeDirection={["down"]}
           onBackdropPress={toggleModal}
         >
           <TagModal />
         </Modal>
-      </TouchableWithoutFeedback>
+
+        <Modal
+        isVisible={isCommentModalVisible}
+        propagateSwipe={true}
+        swipeDirection={["down"]}
+        onBackdropPress={toggleCommentModal}
+        style={{ justifyContent: "flex-end" }}
+      >
+        <CommentModal />
+      </Modal>
 
       <View style={styles.bottomContainer}>
         <Text style={styles.handle}>@{post.user.username}</Text>

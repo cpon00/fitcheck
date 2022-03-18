@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { View, Text, Image } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import styles from "./styles";
-import { Video } from "expo-av";
+// import { Video } from "expo-av";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Modal from "react-native-modal";
 import TagModal from "../Tag/tagModal";
@@ -11,15 +11,14 @@ import CommentModal from "../Comments/commentModal";
 const PostFlex = (props) => {
   const [post, setPost] = useState(props.post);
   const [isLiked, setIsLiked] = useState(false);
-  const [paused, setPaused] = useState(true);
+  // const [paused, setPaused] = useState(true);
   const [isModalVisible, setModalVisible] = useState(false);
   const [isCommentModalVisible, setCommentModalVisible] = useState(false);
-  const isVideo = false;
 
   //for video
-  const onPlayPausePress = () => {
-    setPaused(!paused);
-  };
+  // const onPlayPausePress = () => {
+  //   setPaused(!paused);
+  // };
 
   const toggleTagModal = () => {
     setModalVisible(!isModalVisible);
@@ -51,6 +50,7 @@ const PostFlex = (props) => {
 
   return (
     <View style={styles.container}>
+
       {/* FOR VIDEO INTEGRATION  */}
       {/* <TouchableWithoutFeedback onPress={onPlayPausePress}>
         <Video
@@ -92,19 +92,17 @@ const PostFlex = (props) => {
         </TouchableOpacity>
       </View>
 
-      {/* <Modal
+      <Modal
         isVisible={isModalVisible}
         swipeDirection={["down"]}
         onBackdropPress={toggleTagModal}
-        style={{ zIndex: -100 }}
       >
         <TagModal />
-      </Modal> */}
+      </Modal>
 
       <Modal
         isVisible={isCommentModalVisible}
         propagateSwipe={true}
-        // swipeDirection={["down"]}
         swipeDirection={["down"]}
         onBackdropPress={toggleCommentModal}
         style={{ justifyContent: "flex-end" }}
