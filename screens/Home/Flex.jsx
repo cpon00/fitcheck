@@ -1,8 +1,9 @@
-import React from "react";
-import { View, FlatList, Dimensions } from "react-native";
-import Post from "../../components/Post/PostFlex";
+import React from 'react'
+import { View, FlatList, Dimensions } from 'react-native'
+import Post from '../../components/Post/PostFlex'
 
-import posts from "../../data/posts";
+import posts from '../../data/posts'
+console.log('flex posts: ', posts)
 
 const Flex = () => {
   return (
@@ -11,12 +12,12 @@ const Flex = () => {
         data={posts}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => <Post post={item} />}
-        snapToInterval={Dimensions.get("window").height}
-        snapToAlignment={"start"}
-        decelerationRate={"fast"}
+        snapToInterval={Dimensions.get('window').height}
+        snapToAlignment={'start'}
+        decelerationRate={'fast'}
       />
     </View>
-  );
-};
+  )
+}
 
-export default Flex;
+export default Flex

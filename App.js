@@ -1,63 +1,66 @@
-import React, { Component } from "react";
-import { View, Text, StyleSheet, ImageBackground } from "react-native";
+import React, { Component } from 'react'
+import { View, Text, StyleSheet, ImageBackground } from 'react-native'
 
-import { getAuth } from "firebase/auth";
+import { getAuth } from 'firebase/auth'
 
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import rootReducer from "./redux/reducers";
-import thunk from "redux-thunk";
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import rootReducer from './redux/reducers'
+import thunk from 'redux-thunk'
 
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 
-import LandingScreen from "./screens/Auth/Landing.jsx";
-import RegisterScreen from "./screens/Auth/Register.jsx";
-import LoginScreen from "./screens/Auth/Login.jsx";
-import MainScreen from "./screens/Main.jsx";
-import PostScreen from "./screens/Post/Post.jsx";
-import SaveScreen from "./screens/Post/Save.jsx";
+import LandingScreen from './screens/Auth/Landing.jsx'
+import RegisterScreen from './screens/Auth/Register.jsx'
+import LoginScreen from './screens/Auth/Login.jsx'
+import MainScreen from './screens/Main.jsx'
+import PostScreen from './screens/Post/Post.jsx'
+import SaveScreen from './screens/Post/Save.jsx'
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
-const auth = getAuth();
+const store = createStore(rootReducer, applyMiddleware(thunk))
+const auth = getAuth()
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 export class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      loaded: false,
-    };
+      loaded: false
+    }
   }
 
   componentDidMount() {
-    this._isMounted = true;
+    this._isMounted = true
 
     auth.onAuthStateChanged((user) => {
       if (!user) {
         this.setState({
           loggedIn: false,
-          loaded: true,
-        });
+          loaded: true
+        })
       } else {
         this.setState({
           loggedIn: true,
-          loaded: true,
-        });
+          loaded: true
+        })
       }
-    });
+    })
   }
 
   render() {
-    const { loggedIn, loaded } = this.state;
+    const { loggedIn, loaded } = this.state
 
     //this code handles what happens before the application loads.
     if (!loaded) {
       return (
         <View style={styles.preLoad}>
-          <ImageBackground source = {require("./assets/fitcheck.png")} style = {{flex:1}}></ImageBackground>
+          <ImageBackground
+            source={require('./assets/fitcheck.png')}
+            style={{ flex: 1 }}
+          ></ImageBackground>
         </View>
-      );
+      )
     }
 
     //this code handles what happens when there is no user credentials stored
@@ -82,7 +85,7 @@ export class App extends Component {
             />
           </Stack.Navigator>
         </NavigationContainer>
-      );
+      )
     }
 
     //this code handles when user is logged in and app is loaded.
@@ -110,15 +113,15 @@ export class App extends Component {
           </Stack.Navigator>
         </NavigationContainer>
       </Provider>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   preLoad: {
     flex: 1,
-    justifyContent: "center",
-  },
-});
+    justifyContent: 'center'
+  }
+})
 
-export default App;
+export default App
