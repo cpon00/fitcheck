@@ -18,8 +18,6 @@ const PostFlex = (props) => {
     setPaused(!paused)
   }
 
-  console.log('POST, ', props.post)
-
   const toggleModal = () => {
     setModalVisible(!isModalVisible)
   }

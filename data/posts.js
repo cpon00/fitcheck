@@ -36,9 +36,11 @@ async function populatePosts() {
     const docData = document.data()
     posts.push({
       id: docData.timestamp.seconds,
-      videoUri: docData.url,
+      //docData.url
+      videoUri:
+        'https://firebasestorage.googleapis.com/v0/b/fitcheck-3de6c.appspot.com/o/posts%2FZyWbCrl5LdQrPxh7flAyrhnx05S2%2F0.tnlq4vqdj09?alt=media&token=e502f9af-b3c3-4088-973a-f0123335d795',
       user: {
-        id: '1HNBZ0t2lbQuSHIOr7D11YAZNFs2',
+        id: '1HNBZ0t2lbQuSHIOr7D11YAZNFs2', //Carter's iD
         username: user.data().name,
         imageUri: require('../assets/profile.jpg')
       },
@@ -47,15 +49,33 @@ async function populatePosts() {
       comments: 0 // need to add comments list in each post in firestore TODO
     })
   }
-  console.log('posts ', posts)
+
   const populatedPosts = await Promise.all(posts)
   return populatedPosts
 }
-const goodPosts = populatePosts()
-console.log('FUCK')
-console.log(goodPosts)
+let bestPosts = []
+const goodPosts = populatePosts().then(function (response) {
+  bestPosts = response
+})
 
-export default goodPosts
+//export default bestPosts
+
+export default [
+  {
+    id: 'p1',
+    videoUri:
+      'https://firebasestorage.googleapis.com/v0/b/fitcheck-3de6c.appspot.com/o/posts%2FZyWbCrl5LdQrPxh7flAyrhnx05S2%2F0.tnlq4vqdj09?alt=media&token=e502f9af-b3c3-4088-973a-f0123335d795',
+    user: {
+      id: 'u1',
+      username: 'jkalili',
+      imageUri: require('../assets/profile.jpg')
+    },
+    description:
+      'my first post with a very long description wow this is so long blah blah blah test',
+    likes: 437,
+    comments: 19
+  }
+]
 
 //async function appendUserDetailsToPost() {
 //   const usersSnapshot = await getDocs(collection(db, 'users'))
