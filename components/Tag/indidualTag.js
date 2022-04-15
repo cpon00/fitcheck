@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import { Image } from "react-native";
 import { StyleSheet, Linking } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -8,16 +8,18 @@ const IndividualTag = (props) => {
   const { post } = props;
 
   return (
-    <TouchableOpacity
-      style={styles.container}
-      onPress={() => Linking.openURL(`${post.tagUrl}`)}
-    >
-      <Image source={post.tagImageUri} style={styles.image} />
-      <View style={styles.textContainer}>
-        <Text style={styles.brandText}>{post.tagBrandText}</Text>
-        <Text style={styles.clothingText}>{post.tagClothingText}</Text>
-      </View>
-    </TouchableOpacity>
+    <Pressable>
+      <TouchableOpacity
+        style={styles.container}
+        onPress={() => Linking.openURL(`${post.tagUrl}`)}
+      >
+        <Image source={post.tagImageUri} style={styles.image} />
+        <View style={styles.textContainer}>
+          <Text style={styles.brandText}>{post.tagBrandText}</Text>
+          <Text style={styles.clothingText}>{post.tagClothingText}</Text>
+        </View>
+      </TouchableOpacity>
+    </Pressable>
   );
 };
 

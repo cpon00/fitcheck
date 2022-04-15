@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import IndividualTag from "./indidualTag";
 import { StyleSheet } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 const product1 = {
   tagImageUri: require("../../assets/shirt.jpg"),
@@ -26,12 +27,12 @@ const product3 = {
 
 const TagModal = () => {
   return (
-    <View style={modalStyles.modal}>
+    <ScrollView style={modalStyles.modal}>
       <Text style={modalStyles.tag}>Tags</Text>
       <IndividualTag post={product1} />
       <IndividualTag post={product2} />
       <IndividualTag post={product3} />
-    </View>
+    </ScrollView>
   );
 };
 
