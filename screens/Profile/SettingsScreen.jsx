@@ -1,120 +1,125 @@
 import React from "react";
-import { Text, View, TextInput, StyleSheet, Alert } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Text, View, StyleSheet, Alert, Dimensions } from "react-native";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { TouchableOpacity } from "react-native";
 import { getAuth } from "firebase/auth";
 
-const SettingsScreen = () => {
+const SettingsScreen = ({navigation}) => {
   const auth = getAuth();
 
   return (
     <View style={styles.container}>
-      <TextInput
-        placeholder="name"
-        style={styles.input}
-        onChangeText={(name) => this.setState({ name })}
-      />
-      <TextInput
-        placeholder="pronouns"
-        style={styles.input}
-        onChangeText={(pronouns) => this.setState({ pronouns })}
-      />
-      <TextInput
-        placeholder="email"
-        style={styles.input}
-        onChangeText={(email) => this.setState({ email })}
-      />
-      <TextInput
-        placeholder="password"
-        secureTextEntry={true}
-        style={styles.input}
-        onChangeText={(password) => this.setState({ password })}
-      />
-      <View style={styles.buttonContainer}>
-        <View style={{ width: "50%" }}>
-          <TouchableOpacity
-            style={styles.buttonSave}
-            onPress={() => this.onSignUp()}
-          >
-            <Text style={styles.buttonText}>SAVE</Text>
-          </TouchableOpacity>
+        <View style={styles.topContainer}>
+
+        <MaterialCommunityIcons name='arrow-left' size='20' style={styles.back} onPress={() => navigation.pop()}></MaterialCommunityIcons>
+        <Text style={styles.topText}>Settings</Text>
+
         </View>
+
+        <View style={styles.midContainer}>
+
+        <TouchableOpacity style={styles.settingButton}>
+          <Text style={styles.buttonText}>Notifications</Text>
+          <MaterialCommunityIcons name="arrow-right" size={14} style={styles.buttonArrow}></MaterialCommunityIcons>
+        </TouchableOpacity>
         <View style={styles.midLine} />
-        <View style={{ width: "50%" }}>
-          <TouchableOpacity
-            style={styles.buttonSignOut}
-            onPress={() =>
-              Alert.alert("Do you want to sign out?", "", [
-                {
-                  text: "Cancel",
-                  onPress: () => console.log("Cancel Pressed"),
-                  style: "cancel",
-                },
-                { text: "Sign Out", onPress: () => auth.signOut() },
-              ])
-            }
-          >
-            <Text style={styles.buttonText}>SIGN OUT</Text>
-          </TouchableOpacity>
+
+        <TouchableOpacity style={styles.settingButton}>
+          <Text style={styles.buttonText}>Privacy      </Text>
+          <MaterialCommunityIcons name="arrow-right" size={14} style={styles.buttonArrow}></MaterialCommunityIcons>
+        </TouchableOpacity>
+        <View style={styles.midLine} />
+
+        <TouchableOpacity style={styles.settingButton}>
+          <Text style={styles.buttonText}>Security     </Text>
+          <MaterialCommunityIcons name="arrow-right" size={14} style={styles.buttonArrow}></MaterialCommunityIcons>
+        </TouchableOpacity>
+        <View style={styles.midLine} />
+
+        <TouchableOpacity style={styles.settingButton}>
+          <Text style={styles.buttonText}>Account     </Text>
+          <MaterialCommunityIcons name="arrow-right" size={14} style={styles.buttonArrow}></MaterialCommunityIcons>
+        </TouchableOpacity>
+        <View style={styles.midLine} />
+
+        <TouchableOpacity style={styles.settingButton}>
+          <Text style={styles.buttonText}>Help         </Text>
+          <MaterialCommunityIcons name="arrow-right" size={14} style={styles.buttonArrow}></MaterialCommunityIcons>
+        </TouchableOpacity>
+        <View style={styles.midLine} />
+
+        <TouchableOpacity style={styles.settingButton}>
+          <Text style={styles.buttonText}>About        </Text>
+          <MaterialCommunityIcons name="arrow-right" size={14} style={styles.buttonArrow}></MaterialCommunityIcons>
+        </TouchableOpacity>
+
+        <View style={styles.midLine} />
         </View>
-      </View>
+
+      <TouchableOpacity
+        style={styles.buttonSignOut}
+        onPress={() =>
+          Alert.alert("Do you want to log out?", "", [
+            {
+              text: "Cancel",
+              style: "cancel",
+            },
+            { text: "Log Out", onPress: () => auth.signOut() },
+          ])
+        }
+      >
+        <Text style={styles.signOutText}>Log Out</Text>
+      </TouchableOpacity>
+
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  input: {
-    height: 35,
-    margin: 12,
-    borderWidth: 0.5,
-    padding: 10,
-    borderColor: "gray",
+  container:{
+  height:Dimensions.get('window').height,
+  width: Dimensions.get('window').width,
   },
-  container: {
-    top: "30%",
-    width: "80%",
-    alignSelf: "center",
-    backgroundColor: "#FAF9F6",
-    paddingTop: 20,
-    borderRadius: 15,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
-    elevation: 3,
+  back:{
+    left:"5%",
+    top:"10%",
   },
-  buttonSave: {
-    marginTop: 12,
-    backgroundColor: "skyblue",
-    height: 50,
-    justifyContent: "center",
-    borderBottomLeftRadius: 15,
+  topContainer:{
+    marginBottom:30
+  },
+  topText:{
+    fontSize:20,
+    position:"absolute",
+    alignSelf:'center',
+  },
+  buttonText:{
+    fontSize:14
+  },
+  settingButton:{
+    height:50,
+    justifyContent:"space-around",
+    flexDirection:"row",
+    alignItems:"center"
   },
   buttonSignOut: {
-    marginTop: 12,
-    backgroundColor: "skyblue",
-    height: 50,
-    justifyContent: "center",
-    borderBottomRightRadius: 15,
+    height: 40,
+    width: 80,
+    alignSelf:"center",
+    position:"absolute",
+    bottom:"18%"
   },
-  buttonText: {
-    alignSelf: "center",
-    color: "white",
-    fontWeight: "400",
-  },
-  buttonContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    width: "100%",
+  signOutText:{
+    alignSelf:"center",
+    fontWeight:"bold",
+    color:"blue",
+    fontSize:18
   },
   midLine: {
-    marginTop: 18,
-    height: 40,
-    width: StyleSheet.hairlineWidth,
+    height: StyleSheet.hairlineWidth,
+    width: "95%",
     backgroundColor: "gray",
     zIndex: 15,
+    alignSelf:"center"
   },
 });
 export default SettingsScreen;

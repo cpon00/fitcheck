@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
   Dimensions,
 } from "react-native";
 import { Camera } from "expo-camera";
