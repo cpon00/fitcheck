@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-import * as React from 'react'
-import { Searchbar } from 'react-native-paper'
-import {
-  View,
-  Text,
-  SafeAreaView,
-  StatusBar,
-  ImageBackground
-} from 'react-native'
-import SearchWindow from '../../components/SearchComponents/SearchWindow'
-import SearchWindowLong from '../../components/SearchComponents/SearchWindowLong'
-import { ScrollView } from 'react-native-gesture-handler'
-import styles from './SearchStyles'
-=======
 import * as React from "react";
 import { Searchbar } from "react-native-paper";
 import { View, Text, SafeAreaView, StatusBar } from "react-native";
@@ -20,7 +5,6 @@ import SearchWindow from "../../components/SearchComponents/SearchWindow";
 import SearchWindowLong from "../../components/SearchComponents/SearchWindowLong";
 import { ScrollView } from "react-native-gesture-handler";
 import styles from "./SearchStyles";
->>>>>>> 13c55fbd1f006dcec0e9850a12c574b5629eb843
 
 const SearchScreen = () => {
   const [searchQuery, setSearchQuery] = React.useState('')
