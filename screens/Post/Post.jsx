@@ -1,12 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import {
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Dimensions
-} from 'react-native'
+import { Pressable, StyleSheet, Text, View, Dimensions } from 'react-native'
 import { Camera } from 'expo-camera'
 import { Icon } from 'react-native-elements'
 import * as ImagePicker from 'expo-image-picker'

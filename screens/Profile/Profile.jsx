@@ -1,5 +1,6 @@
 import React from 'react'
 import ProfileScreen from './ProfileScreen'
+import EditScreen from './EditScreen'
 import SettingsScreen from './SettingsScreen'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -13,6 +14,13 @@ function Profile() {
         <Stack.Screen
           name="ProfileScreen"
           component={ProfileScreen}
+          options={{
+            headerShown: false
+          }}
+        />
+        <Stack.Screen
+          name="EditScreen"
+          component={EditScreen}
           options={{
             headerShown: false
           }}

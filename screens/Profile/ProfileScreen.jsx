@@ -1,15 +1,13 @@
 import React from "react";
 import FlexView from "./FlexView.jsx"
 import ChecksView from "./ChecksView.jsx"
-import { View, Text, StyleSheet, Button, Alert} from "react-native";
+import { View, Text, StyleSheet} from "react-native";
 import {Avatar} from 'react-native-elements';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { useState, useEffect } from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
-import { createStackNavigator } from "@react-navigation/stack";
+import { TouchableOpacity } from "react-native-gesture-handler";
 import {useNavigation} from '@react-navigation/native'
 
 import { getAuth } from '@firebase/auth'
@@ -83,6 +81,7 @@ getDownloadURL(pfpRef)
 
     <SafeAreaProvider>
       <View style={{ top: "0.2%", alignItems: 'center' }}>
+        <MaterialCommunityIcons size={24} name='cog' style={styles.settings} onPress={() => navigation.push('SettingsScreen')}></MaterialCommunityIcons>
         <Avatar 
         rounded
         size = 'large'
@@ -107,7 +106,7 @@ getDownloadURL(pfpRef)
         </View>
 
         <TouchableOpacity style={styles.button} 
-          onPress={() => navigation.push('SettingsScreen')}>
+          onPress={() => navigation.push('EditScreen')}>
           <Text style = {styles.followersTextNumber}>Edit Profile</Text>
         </TouchableOpacity>
 
@@ -146,6 +145,11 @@ getDownloadURL(pfpRef)
 }
 
 const styles = StyleSheet.create({
+  settings:{
+    position:"absolute",
+    top:0,
+    right:"5%",
+  },
   
   profilePicture: {
     marginTop: 15
@@ -202,7 +206,6 @@ const styles = StyleSheet.create({
 
   button: {
     top: 15,
-    marginBottom: 10,
     width: "200%",
     borderWidth: 1,
     borderRadius:7,
