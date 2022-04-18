@@ -1,10 +1,10 @@
-import * as React from "react";
-import { Searchbar } from "react-native-paper";
-import { View, Text, SafeAreaView, StatusBar } from "react-native";
-import SearchWindow from "../../components/SearchComponents/SearchWindow";
-import SearchWindowLong from "../../components/SearchComponents/SearchWindowLong";
-import { ScrollView } from "react-native-gesture-handler";
-import styles from "./SearchStyles";
+import * as React from 'react'
+import { Searchbar } from 'react-native-paper'
+import { View, Text, SafeAreaView, StatusBar } from 'react-native'
+import SearchWindow from '../../components/SearchComponents/SearchWindow'
+import SearchWindowLong from '../../components/SearchComponents/SearchWindowLong'
+import { ScrollView } from 'react-native-gesture-handler'
+import styles from './SearchStyles'
 
 const SearchScreen = () => {
   const [searchQuery, setSearchQuery] = React.useState('')
@@ -26,24 +26,23 @@ const SearchScreen = () => {
         <Text style={styles.descriptionText}>Your Top Styles</Text>
         <View style={styles.card}>
           <SearchWindow
-            img={require("../../assets/minimal.jpg")}
+            img={require('../../assets/minimal.jpg')}
             name="Minimalist"
           />
           <SearchWindow
-            img={require("../../assets/techie.png")}
+            img={require('../../assets/techie.png')}
             name="Tech Wear"
           />
         </View>
-        <Text style={{ marginLeft: 20, fontWeight: "bold" }}>Trending</Text>
-        <View style={{ flexDirection: "row" }}>
+        <Text style={{ marginLeft: 20, fontWeight: 'bold' }}>Trending</Text>
+        <View style={{ flexDirection: 'row' }}>
           <View style={styles.Left}>
             <SearchWindow
-              img={require("../../assets/earthtones.jpg")}
+              img={require('../../assets/earthtones.jpg')}
               name="Earthtones"
             />
 
             <SearchWindow
-<<<<<<< HEAD
               img={require('../../assets/skater.jpg')}
               name="Skater"
             />
@@ -57,36 +56,16 @@ const SearchScreen = () => {
             />
             <SearchWindowLong
               img={require('../../assets/grunge.jpg')}
-=======
-              img={require("../../assets/skater.jpg")}
-              name="Skater"
-            />
-            <SearchWindow
-              img={require("../../assets/athleisure.jpeg")}
-              name="Athleisure"
-            />
-            <SearchWindow
-              img={require("../../assets/fallCore.jpg")}
-              name="Fall Core"
-            />
-            <SearchWindowLong
-              img={require("../../assets/grunge.jpg")}
->>>>>>> 13c55fbd1f006dcec0e9850a12c574b5629eb843
               name="Grunge"
             />
           </View>
           <View style={styles.Right}>
             <SearchWindowLong
-<<<<<<< HEAD
               img={require('../../assets/y2k.jpg')}
-=======
-              img={require("../../assets/y2k.jpg")}
->>>>>>> 13c55fbd1f006dcec0e9850a12c574b5629eb843
               name="Y2K"
               navigation
             />
             <SearchWindow
-<<<<<<< HEAD
               img={require('../../assets/hypebeast.jpg')}
               name="Hypebeast"
             />
@@ -100,21 +79,6 @@ const SearchScreen = () => {
             />
             <SearchWindow
               img={require('../../assets/alt.jpg')}
-=======
-              img={require("../../assets/hypebeast.jpg")}
-              name="Hypebeast"
-            />
-            <SearchWindow
-              img={require("../../assets/academia.jpg")}
-              name="Academia"
-            />
-            <SearchWindow
-              img={require("../../assets/ChineseStreetwear.jpg")}
-              name="Chinese Streetwear"
-            />
-            <SearchWindow
-              img={require("../../assets/alt.jpg")}
->>>>>>> 13c55fbd1f006dcec0e9850a12c574b5629eb843
               name="Alternative"
             />
           </View>
