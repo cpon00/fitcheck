@@ -1,111 +1,112 @@
-import React from "react";
-import FlexView from "./FlexView.jsx"
-import ChecksView from "./ChecksView.jsx"
-import { View, Text, StyleSheet, Button, Alert} from "react-native";
-import {Avatar} from 'react-native-elements';
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { useState } from "react";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
-import {useNavigation} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import SettingsScreen from "./SettingsScreen";
+import React from 'react'
+import FlexView from './FlexView.jsx'
+import ChecksView from './ChecksView.jsx'
+import { View, Text, StyleSheet, Button, Alert } from 'react-native'
+import { Avatar } from 'react-native-elements'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
+import { useState } from 'react'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
+import { useNavigation } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import SettingsScreen from './SettingsScreen'
 
 const Tab = createMaterialTopTabNavigator()
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 function Profile() {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(0)
   const navigation = useNavigation()
   return (
     //<View style={{ flex: 1, alignItems: 'center' }}></View>
 
     <SafeAreaProvider>
-      <View style={{ top: "0.2%", alignItems: 'center' }}>
-        <Avatar 
-        rounded
-        size = 'large'
-        source={{uri: 'https://d2h1pu99sxkfvn.cloudfront.net/b0/7079909/339328872_uTMmxtG0qv/U5.jpg'}}>
-        </Avatar>
+      <View style={{ top: '0.2%', alignItems: 'center' }}>
+        <Avatar
+          rounded
+          size="large"
+          source={{
+            uri: 'https://d2h1pu99sxkfvn.cloudfront.net/b0/7079909/339328872_uTMmxtG0qv/U5.jpg'
+          }}
+        ></Avatar>
 
-        <Text style = {styles.username}> @mymy123 </Text>
-        <View style ={{flexDirection: "row"}}>
-          <View style = {styles.left}>
-            <Text style = {styles.followersTextNumber}>69</Text>
-            <Text style = {styles.followersText}>Following</Text>
+        <Text style={styles.username}> @mymy123 </Text>
+        <View style={{ flexDirection: 'row' }}>
+          <View style={styles.left}>
+            <Text style={styles.followersTextNumber}>69</Text>
+            <Text style={styles.followersText}>Following</Text>
           </View>
-          <View style = {styles.middle}>
-            <Text style = {styles.followersTextNumber}>1.1b</Text>
-            <Text style = {styles.followersText}>Followers</Text>
+          <View style={styles.middle}>
+            <Text style={styles.followersTextNumber}>1.1b</Text>
+            <Text style={styles.followersText}>Followers</Text>
           </View>
 
-          <View style = {styles.right}>
-            <Text style = {styles.followersTextNumber}>34</Text>
-            <Text style = {styles.followersText}>Posts</Text>
+          <View style={styles.right}>
+            <Text style={styles.followersTextNumber}>34</Text>
+            <Text style={styles.followersText}>Posts</Text>
           </View>
         </View>
 
-        <TouchableOpacity style={styles.button} onPress={() => navigation.push("SettingsScreen")}>
-         <Text style = {styles.buttonText}>Edit Profile</Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.push('SettingsScreen')}
+        >
+          <Text style={styles.buttonText}>Edit Profile</Text>
         </TouchableOpacity>
 
-        <Text style = {styles.bio}>Most fitted of all time</Text>
+        <Text style={styles.bio}>Most fitted of all time</Text>
       </View>
-
-
 
       <Tab.Navigator>
         <Tab.Screen
-          name = "Flex"
-          component = {FlexView}
-          options = {{
-            tabBarLabel: "Flex",
+          name="Flex"
+          component={FlexView}
+          options={{
+            tabBarLabel: 'Flex',
             tabBarShowLabel: false,
             tabBarIcon: ({ color }) => (
-              <MaterialCommunityIcons name="fire" color={color} size ={24}/>
-            ),
+              <MaterialCommunityIcons name="fire" color={color} size={24} />
+            )
           }}
         />
 
         <Tab.Screen
-          name = "Checks"
-          component = {ChecksView}
-          options = {{
-            tabBarLabel: "Checks",
+          name="Checks"
+          component={ChecksView}
+          options={{
+            tabBarLabel: 'Checks',
             tabBarShowLabel: false,
-            tabBarIcon: ({color}) => (
-              <MaterialCommunityIcons name="check-outline" color={color} size={24}/>
+            tabBarIcon: ({ color }) => (
+              <MaterialCommunityIcons
+                name="check-outline"
+                color={color}
+                size={24}
+              />
             )
           }}
         />
       </Tab.Navigator>
     </SafeAreaProvider>
-    
-  );
+  )
 }
 
-
-
-
 const styles = StyleSheet.create({
-
   buttonText: {
     fontWeight: 'bold',
-    alignSelf: 'center',
+    alignSelf: 'center'
   },
-  
+
   profilePicture: {
     marginTop: 15
   },
-  
+
   username: {
     fontWeight: 'bold',
     alignItems: 'center',
     fontSize: 16,
     marginTop: 12,
     marginBottom: 20
-    
   },
 
   left: {
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
     marginTop: '20px',
     textAlign: 'center',
     display: 'flex',
-    flexDirection: "row",
+    flexDirection: 'row',
     justifyContent: 'space-between'
   },
 
@@ -141,26 +142,22 @@ const styles = StyleSheet.create({
     width: '100%',
     textAlign: 'center',
     justifyContent: 'center'
-
   },
 
   followersTextNumber: {
     fontWeight: 'bold'
   },
 
-
-
   button: {
     top: 15,
     marginBottom: 10,
-    width: "120%",
+    width: '120%',
     borderWidth: 1,
-    borderRadius:7,
-    borderColor:'grey',
+    borderRadius: 7,
+    borderColor: 'grey',
     alignSelf: 'center',
     backgroundColor: 'transparent',
-    padding: 10,
-
+    padding: 10
   },
 
   bio: {
@@ -168,7 +165,6 @@ const styles = StyleSheet.create({
     marginTop: 22,
     marginBottom: 15
   }
-
 })
 
-export default Profile;
+export default Profile
