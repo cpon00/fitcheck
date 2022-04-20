@@ -32,7 +32,7 @@ async function populatePosts() {
       },
       user: {
         id: '1HNBZ0t2lbQuSHIOr7D11YAZNFs2', //Carter's iD
-        username: user.data().name,
+        username: docData.username,
         imageUri: require('../../assets/profile.jpg')
       },
       description: docData.caption,
